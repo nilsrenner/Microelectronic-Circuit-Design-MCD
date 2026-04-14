@@ -1,0 +1,48 @@
+---
+title: Microelectronic Circuit Design
+author:
+  - name: Daniel Albinger
+    Matrikelnummer: 5183249
+    corresponding: true
+    email: dalbinger@stud.hs-bremen.de
+    roles: []
+    affiliations:
+      - Curvenote
+  - name: Charlotte Beckert
+    Matrikelnummer: 5
+    corresponding: true
+    email: cbeckert@stud.hs-bremen.de
+    roles: []
+    affiliations:
+      - Curvenote
+  - name: Nils Renner
+    Matrikelnummer: 5
+    corresponding: true
+    email: nrenner@stud.hs-bremen.de
+    roles: []
+    affiliations:
+      - Curvenote
+keywords:
+  - Microelectronic Circuit Design
+abstract: |
+  Microelectronic Circuit Design
+plain-language-summary: |
+  Microelectronic Circuit Design
+key-points:
+  - Microelectronic Circuit Design
+date: last-modified
+bibliography: references.bib
+citation:
+  container-title: Microelectronic Circuit Design
+number-sections: true
+jupyter: python3
+---
+
+## Introduction 
+
+## Conclusion
+
+## References {.unnumbered}
+
+::: {#refs}
+:::
