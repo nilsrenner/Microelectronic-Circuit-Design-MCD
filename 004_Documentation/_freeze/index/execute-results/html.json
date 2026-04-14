@@ -1,0 +1,12 @@
+{
+  "hash": "96c21935b41cb0a2551b39a2e0a7fd6b",
+  "result": {
+    "engine": "jupyter",
+    "markdown": "---\ntitle: Microelectronic Circuit Design\nauthor:\n  - name: Daniel Albinger\n    Matrikelnummer: 5183249\n    corresponding: true\n    email: dalbinger@stud.hs-bremen.de\n    roles: []\n    affiliations:\n      - Curvenote\n  - name: Charlotte Beckert\n    Matrikelnummer: 5\n    corresponding: true\n    email: cbeckert@stud.hs-bremen.de\n    roles: []\n    affiliations:\n      - Curvenote\n  - name: Nils Renner\n    Matrikelnummer: 5\n    corresponding: true\n    email: nrenner@stud.hs-bremen.de\n    roles: []\n    affiliations:\n      - Curvenote\nkeywords:\n  - Microelectronic Circuit Design\nabstract: |\n  Microelectronic Circuit Design\nplain-language-summary: |\n  Microelectronic Circuit Design\nkey-points:\n  - Microelectronic Circuit Design\ndate: last-modified\nbibliography: references.bib\ncitation:\n  container-title: Microelectronic Circuit Design\nnumber-sections: true\njupyter: python3\n---\n\n## Introduction \n\n## Conclusion\n\n## References {.unnumbered}\n\n::: {#refs}\n:::\n\n",
+    "supporting": [
+      "index_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}
