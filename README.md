@@ -22,7 +22,7 @@ The project data is organized as follows:
 ---
 
 ## Authors & Supervisor
-* **Authors:** Daniel Albinger, Charlotte Benkert, Nils Renner
+* **Authors:** Daniel Albinger, Charlotte Benckert, Nils Renner
 * **Supervisor:** Prof. Dr.-Ing. Mirco Meiners
 * **Institution:** City University of Applied Sciences Bremen (HSB), M.Sc. Electronics Engineering
 
