@@ -14,10 +14,13 @@ The project data is organized as follows:
 
 | Folder / File | Description |
 | :--- | :--- |
-| **`001_Design`** | design files. |
-| **`002_Simulation`** | Circuit simulations and analysis. |
-| **`003_Data`** | Final data for documentation. |
-| **`004_Documentation`** | Project documentation authored in Quarto. |
+| **`000_Xschemplayground`** | Learning files |
+| **`001_provided_files`** | Provided files from Prof. Meiners |
+| **`002_Behavorial_Model`** | Behavorial Model from the Linkwitz-Riley-Crossover |
+| **`003_Ideal_Circuits`** | Ideal Circuit from the Linkwitz-Riley-Crossover |
+| **`004_Real_Circuits`** | Real Circuit from the Linkwitz-Riley-Crossover |
+| **`005_Simulation`** | Simulation of the Linkwitz-Riley-Crossover ideal circuit in LTSpice |
+| **`006_Documentation`** | Project documentation authored in Quarto. |
 
 ---
 
