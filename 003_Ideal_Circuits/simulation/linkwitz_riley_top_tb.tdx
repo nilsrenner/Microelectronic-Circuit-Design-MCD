@@ -1,0 +1,104 @@
+tEDAx v1
+begin netlist v1 linkwitz_riley_top_tb
+#subcircuit linkwitz_riley_cross_vsvc_150hz x1
+#map VOUT_LP -> v_out_lp
+#map VOUT_CROSS -> v_out_cross
+#map VIN -> v_in
+#map VOUT_INV -> net1
+#map VOUT_HP -> v_out_hp
+   value x1.R1 R_LP
+   value x1.R2 R_LP
+   value x1.C1 C_LP
+   value x1.C2 C_LP
+   value x1.R3 R_HP
+   value x1.R4 R_HP
+   value x1.C3 C_HP
+   value x1.C4 C_HP
+   value x1.R5 R_IN
+   value x1.R6 R_IN
+   value x1.R7 R_IN
+   value x1.R8 R_IN
+   value x1.R9 R_IN
+   #**** begin user architecture code
+   #**** end user architecture code
+   #**** begin user architecture code
+   #**** end user architecture code
+   conn x1.net1 x1.R1 1
+   pinname x1.R1 1 P
+   conn v_in x1.R1 2
+   pinname x1.R1 2 M
+   conn x1.net2 x1.R2 1
+   pinname x1.R2 1 P
+   conn x1.net1 x1.R2 2
+   pinname x1.R2 2 M
+   conn x1.net1 x1.C1 1
+   pinname x1.C1 1 p
+   conn v_out_lp x1.C1 2
+   pinname x1.C1 2 m
+   conn x1.net2 x1.C2 1
+   pinname x1.C2 1 p
+   conn x1.0 x1.C2 2
+   pinname x1.C2 2 m
+   conn x1.0 x1.R3 1
+   pinname x1.R3 1 P
+   conn x1.net4 x1.R3 2
+   pinname x1.R3 2 M
+   conn x1.net3 x1.R4 1
+   pinname x1.R4 1 P
+   conn v_out_hp x1.R4 2
+   pinname x1.R4 2 M
+   conn x1.net3 x1.C3 1
+   pinname x1.C3 1 p
+   conn x1.net4 x1.C3 2
+   pinname x1.C3 2 m
+   conn v_in x1.C4 1
+   pinname x1.C4 1 p
+   conn x1.net3 x1.C4 2
+   pinname x1.C4 2 m
+   conn x1.net5 x1.R5 1
+   pinname x1.R5 1 P
+   conn net1 x1.R5 2
+   pinname x1.R5 2 M
+   conn v_out_hp x1.R6 1
+   pinname x1.R6 1 P
+   conn x1.net5 x1.R6 2
+   pinname x1.R6 2 M
+   conn x1.net6 x1.R7 1
+   pinname x1.R7 1 P
+   conn v_out_cross x1.R7 2
+   pinname x1.R7 2 M
+   conn net1 x1.R8 1
+   pinname x1.R8 1 P
+   conn x1.net6 x1.R8 2
+   pinname x1.R8 2 M
+   conn v_out_lp x1.R9 1
+   pinname x1.R9 1 P
+   conn x1.net6 x1.R9 2
+   pinname x1.R9 2 M
+   footprint x1.R1 1206
+   footprint x1.R2 1206
+   footprint x1.C1 1206
+   footprint x1.C2 1206
+   footprint x1.R3 1206
+   footprint x1.R4 1206
+   footprint x1.C3 1206
+   footprint x1.C4 1206
+   footprint x1.R5 1206
+   footprint x1.R6 1206
+   footprint x1.R7 1206
+   footprint x1.R8 1206
+   footprint x1.R9 1206
+   device x1.R1 resistor
+   device x1.R2 resistor
+   device x1.C1 ceramic\ capacitor
+   device x1.C2 ceramic\ capacitor
+   device x1.R3 resistor
+   device x1.R4 resistor
+   device x1.C3 ceramic\ capacitor
+   device x1.C4 ceramic\ capacitor
+   device x1.R5 resistor
+   device x1.R6 resistor
+   device x1.R7 resistor
+   device x1.R8 resistor
+   device x1.R9 resistor
+end netlist
