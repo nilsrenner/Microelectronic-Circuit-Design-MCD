@@ -20,7 +20,6 @@ N 180 -180 180 -60 {lab=v_out_lp}
 N 180 -180 600 -180 {lab=v_out_lp}
 N 600 -180 600 -100 {lab=v_out_lp}
 N -400 -0 -120 -0 {lab=v_in}
-C {/foss/designs/003_Ideal_Circuits/linkwitz_riley_cross_vsvc_150hz.sym} 20 0 0 0 {name=x1}
 C {simulator_commands_shown.sym} -480 -290 0 0 {
 name=Libs_Ngspice1
 simulator=ngspice
@@ -73,3 +72,4 @@ m=1}
 C {gnd.sym} 600 -40 0 0 {name=l4 lab=0}
 C {lab_pin.sym} -260 0 1 0 {name=p2 sig_type=std_logic lab=v_in}
 C {title.sym} -380 220 0 0 {name=Top Level Testbench author="Daniel Albinger"}
+C {/foss/designs/Repo/003_Ideal_Circuits/linkwitz_riley_cross_vsvc_150hz.sym} 20 0 0 0 {name=x1}
