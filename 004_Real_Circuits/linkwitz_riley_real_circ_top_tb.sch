@@ -71,7 +71,6 @@ m=1}
 C {gnd.sym} 600 -40 0 0 {name=l4 lab=0}
 C {lab_pin.sym} -400 -40 1 0 {name=p2 sig_type=std_logic lab=v_in}
 C {title.sym} -380 220 0 0 {name=Top Level Testbench author="Daniel Albinger"}
-C {/foss/designs/Repo/004_Real_Circuits/linkwtz_riley_crossover_improved_OTA.sym} 10 -40 0 0 {name=x1}
 C {isource.sym} -30 -170 0 0 {name=I0 value=20u}
 C {vsource.sym} 90 -170 0 0 {name=V1 value=1.5 savecurrent=false}
 C {gnd.sym} 90 -130 0 0 {name=l5 lab=0}
@@ -81,3 +80,4 @@ footprint=1206
 device=resistor
 m=1}
 C {gnd.sym} 360 -40 0 0 {name=l1 lab=0}
+C {linkwtz_riley_crossover_improved_OTA.sym} 10 -40 0 0 {name=x2}
