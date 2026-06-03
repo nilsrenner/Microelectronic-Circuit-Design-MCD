@@ -33,7 +33,7 @@ end
 # Unset irrelevant variables.
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV /home/daniel/eda/designs/004_Real_Circuits/sizing/mcd
+set -gx VIRTUAL_ENV /home/daniel/eda/designs/Repo/004_Real_Circuits/sizing/mcd
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/"bin $PATH

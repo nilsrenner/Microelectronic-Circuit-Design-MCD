@@ -1,4 +1,4 @@
-#!/home/daniel/eda/designs/004_Real_Circuits/sizing/mcd/bin/python3
+#!/home/daniel/eda/designs/Repo/004_Real_Circuits/sizing/mcd/bin/python3
 # -*- coding: utf-8 -*-
 import re
 import sys
