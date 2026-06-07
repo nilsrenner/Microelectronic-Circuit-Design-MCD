@@ -80,4 +80,4 @@ footprint=1206
 device=resistor
 m=1}
 C {gnd.sym} 360 -40 0 0 {name=l1 lab=0}
-C {linkwtz_riley_crossover_improved_OTA.sym} 10 -40 0 0 {name=x2}
+C {/foss/designs/004_Real_Circuits/linkwtz_riley_crossover_improved_OTA.sym} 10 -40 0 0 {name=x1}
