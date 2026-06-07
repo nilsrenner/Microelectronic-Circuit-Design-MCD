@@ -7,7 +7,6 @@ F {}
 E {}
 N -460 -190 -430 -190 {lab=#net1}
 N -220 -10 0 -10 {lab=VOUT_LP}
-N -220 -70 -220 -10 {lab=VOUT_LP}
 N -340 -190 -340 -160 {lab=#net2}
 N -370 -190 -340 -190 {lab=#net2}
 N -340 -100 -340 -60 {lab=0}
@@ -16,25 +15,14 @@ N -480 -190 -460 -190 {lab=#net1}
 N -460 -270 -180 -270 {lab=#net1}
 N -120 -270 0 -270 {lab=VOUT_LP}
 N 0 70 20 70 {lab=VOUT_HP}
-N -220 280 -220 350 {lab=VOUT_HP}
 N -220 350 0 350 {lab=VOUT_HP}
 N -600 -20 -540 -20 {lab=VIN}
 N -540 -190 -540 -20 {lab=VIN}
-N -140 120 -140 140 {lab=V_DD}
-N -140 -230 -140 -210 {lab=V_DD}
 N -0 220 150 220 {lab=VOUT_HP}
 N 0 -130 520 -130 {lab=VOUT_LP}
-N -40 -320 -40 -230 {lab=V_DD}
-N -140 -230 -40 -230 {lab=V_DD}
-N -40 -230 -40 120 {lab=V_DD}
-N -140 120 -40 120 {lab=V_DD}
-N -250 -130 -250 220 {lab=I_BIAS}
-N -250 220 -220 220 {lab=I_BIAS}
-N -250 -130 -220 -130 {lab=I_BIAS}
-N -250 -330 -250 -130 {lab=I_BIAS}
+N -40 -240 -40 120 {lab=I_BIAS}
 N 0 70 -0 220 {lab=VOUT_HP}
 N -120 70 0 70 {lab=VOUT_HP}
-N -30 220 -0 220 {lab=VOUT_HP}
 N 0 220 0 350 {lab=VOUT_HP}
 N 0 -270 0 -130 {lab=VOUT_LP}
 N -20 -130 0 -130 {lab=VOUT_LP}
@@ -82,6 +70,34 @@ N 710 -90 730 -90 {lab=VOUT_CROSS}
 N 730 -130 730 -90 {lab=VOUT_CROSS}
 N 710 -50 760 -50 {lab=VOUT_CROSS}
 N 710 -90 710 -50 {lab=VOUT_CROSS}
+N -120 -50 -120 -40 {lab=0}
+N -220 -190 -220 -160 {lab=#net2}
+N -220 -160 -200 -160 {lab=#net2}
+N -220 -100 -220 -10 {lab=VOUT_LP}
+N -220 -100 -200 -100 {lab=VOUT_LP}
+N -80 -240 -80 -210 {lab=I_BIAS}
+N -80 -240 -40 -240 {lab=I_BIAS}
+N -40 -320 -40 -240 {lab=I_BIAS}
+N -130 300 -130 310 {lab=0}
+N -220 190 -210 190 {lab=#net4}
+N -220 160 -220 190 {lab=#net4}
+N -220 250 -220 350 {lab=VOUT_HP}
+N -220 250 -210 250 {lab=VOUT_HP}
+N -90 120 -90 140 {lab=I_BIAS}
+N -90 120 -40 120 {lab=I_BIAS}
+N -130 120 -130 140 {lab=V_DD}
+N -250 120 -130 120 {lab=V_DD}
+N -250 -20 -250 120 {lab=V_DD}
+N -30 220 -0 220 {lab=VOUT_HP}
+N -250 -240 -120 -240 {lab=V_DD}
+N -250 -330 -250 -240 {lab=V_DD}
+N -120 -240 -120 -210 {lab=V_DD}
+N -250 -20 -80 -20 {lab=V_DD}
+N -250 -240 -250 -20 {lab=V_DD}
+N -80 -50 -80 -20 {lab=V_DD}
+N -250 120 -250 330 {lab=V_DD}
+N -250 330 -90 330 {lab=V_DD}
+N -90 300 -90 330 {lab=V_DD}
 C {res.sym} -510 -190 1 0 {name=R1
 value=R_LP
 footprint=1206
@@ -132,10 +148,10 @@ C {gnd.sym} -340 300 0 0 {name=l2 lab=0}
 C {opin.sym} 20 -270 0 0 {name=p2 lab=VOUT_LP}
 C {opin.sym} 20 70 0 0 {name=p3 lab=VOUT_HP}
 C {ipin.sym} -600 -20 0 0 {name=p1 lab=VIN}
-C {gnd.sym} -140 -50 0 0 {name=l5 lab=0}
-C {gnd.sym} -140 300 0 0 {name=l8 lab=0}
-C {iopin.sym} -250 -330 3 0 {name=p6 lab=I_BIAS}
-C {iopin.sym} -40 -320 3 0 {name=p14 lab=V_DD}
+C {gnd.sym} -120 -40 0 0 {name=l5 lab=0}
+C {gnd.sym} -130 310 0 0 {name=l8 lab=0}
+C {iopin.sym} -40 -320 3 0 {name=p6 lab=I_BIAS}
+C {iopin.sym} -250 -330 3 0 {name=p14 lab=V_DD}
 C {res.sym} 320 90 3 0 {name=R10
 value=R_IN
 footprint=1206
@@ -166,5 +182,5 @@ m=1}
 C {vcvs.sym} 340 230 0 0 {name=E1 value=1e6}
 C {vcvs.sym} 710 60 0 0 {name=E4 value=1e6}
 C {opin.sym} 760 -50 0 0 {name=p9 lab=VOUT_CROSS}
-C {/foss/designs/004_Real_Circuits/5T-OTA.sym} -140 -10 0 0 {name=x1}
-C {/foss/designs/004_Real_Circuits/5T-OTA.sym} -140 340 0 0 {name=x2}
+C {/foss/designs/004_Real_Circuits/ota-5t.sym} -120 -130 0 0 {name=x1}
+C {/foss/designs/004_Real_Circuits/ota-5t.sym} -130 220 0 0 {name=x2}
