@@ -1,0 +1,28 @@
+Das ist eine grobe Dokumentation über die sizing Versuche der OTA Variante
+
+----------------------------
+
+gm_id_m12 = 11 # 10-12
+gm_id_m34 = 7 # 6-8
+gm_id_m56 = 7 # 6-8 
+
+M1/2 W= 2.0 , L= 5
+M3/4 W= 3.0 , L= 5
+M5   W= 1.5 , L= 5
+M6   W= 8.5 , L= 5
+
+ergibt:
+siehe results/Bild 1
+
+---------------------------
+
+gm_id_m12 = 12 # 10-12
+gm_id_m34 = 7 # 6-8
+gm_id_m56 = 7 # 6-8 
+
+M1/2 W= 2.0 , L= 5
+M3/4 W= 2.5 , L= 5
+M5   W= 1.0 , L= 5
+M6   W= 6.5 , L= 5
+
+siehe results/Bild 2
