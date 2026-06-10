@@ -7,6 +7,15 @@ Created on Wed May 20 10:03:59 2026
 """
 
 import numpy as np
+import math
+
+
+def format_3step(zahl, precision=3):
+    if zahl == 0:
+        return "0"
+    exp = 3 * (math.floor(math.log10(abs(zahl)) / 3))
+    skaliert = zahl / (10 ** exp)
+    return f"{skaliert:.{precision}f}e{exp:+d}"
 
 #Sizing the Lowpass
 
@@ -25,10 +34,32 @@ c1_tp = C * n
 c2_tp = C/n
 
 
-#%% Dimentions of the HP Components
+
+
+#Sizing HP
 
 c1_hp = r1_tp * 1e-12
 c2_hp = r2_tp * 1e-12
 
 r1_hp = c1_tp * 1e12
 r2_hp = c2_tp * 1e12
+
+print('R1_HP = ', format_3step(r1_hp))
+if m != 1:
+    print('R2_HP = ', format_3step(r2_hp),'\n')
+    
+
+print('C1_HP = ', format_3step(c1_hp))
+if n != 1:
+    print('C2_HP = ', format_3step(c2_hp))
+    
+print('\n')
+
+
+print('R1_TP = ', format_3step(r1_tp))
+if m != 1:
+    print('R2_TP = ', format_3step(r2_tp),'\n')
+
+print('C1_TP = ', format_3step(c1_tp),)
+if n != 1:
+    print('C2_TP = ', format_3step(c2_tp))
