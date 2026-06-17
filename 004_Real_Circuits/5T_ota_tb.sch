@@ -63,4 +63,4 @@ m=1
 value=50f
 footprint=1206
 device="ceramic capacitor"}
-C {/foss/designs/Repo/004_Real_Circuits/ota-5t.sym} 0 0 0 0 {name=x2}
+C {/foss/designs/GitHub_Repo/004_Real_Circuits/ota-5t.sym} 0 0 0 0 {name=x3}

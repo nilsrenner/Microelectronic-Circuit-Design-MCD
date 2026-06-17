@@ -50,4 +50,4 @@ C {lab_pin.sym} 630 20 2 0 {name=p3 sig_type=std_logic lab=v_out_lp}
 C {lab_pin.sym} 390 20 2 0 {name=p5 sig_type=std_logic lab=v_out_hp
 }
 C {lab_pin.sym} -270 0 1 0 {name=p2 sig_type=std_logic lab=v_in}
-C {/foss/designs/Repo/004_Real_Circuits/linkwtz_riley_crossover_pretl_OTA_no_cross.sym} -10 0 0 0 {name=x1}
+C {/foss/designs/GitHub_Repo/004_Real_Circuits/linkwtz_riley_crossover_pretl_OTA_no_cross.sym} -10 0 0 0 {name=x1}

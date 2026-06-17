@@ -120,8 +120,6 @@ C {gnd.sym} -80 -10 0 0 {name=l5 lab=0}
 C {gnd.sym} -90 340 0 0 {name=l8 lab=0}
 C {iopin.sym} 0 -290 3 0 {name=p6 lab=I_BIAS}
 C {iopin.sym} -210 -300 3 0 {name=p14 lab=V_DD}
-C {/foss/designs/Repo/004_Real_Circuits/ota-5t.sym} -80 -100 0 0 {name=x3}
-C {/foss/designs/Repo/004_Real_Circuits/ota-5t.sym} -90 250 0 0 {name=x1}
 C {capa.sym} 140 -100 1 0 {name=C5
 m=1
 value=50f
@@ -132,3 +130,5 @@ m=1
 value=50f
 footprint=1206
 device="ceramic capacitor"}
+C {/foss/designs/GitHub_Repo/004_Real_Circuits/ota-5t.sym} -80 -100 0 0 {name=x1}
+C {/foss/designs/GitHub_Repo/004_Real_Circuits/ota-5t.sym} -90 250 0 0 {name=x2}

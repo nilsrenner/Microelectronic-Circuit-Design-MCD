@@ -152,8 +152,6 @@ C {gnd.sym} -120 -40 0 0 {name=l5 lab=0}
 C {gnd.sym} -130 310 0 0 {name=l8 lab=0}
 C {iopin.sym} -40 -320 3 0 {name=p6 lab=I_BIAS}
 C {iopin.sym} -250 -330 3 0 {name=p14 lab=V_DD}
-C {/foss/designs/Repo/004_Real_Circuits/ota-5t.sym} -120 -130 0 0 {name=x3}
-C {/foss/designs/Repo/004_Real_Circuits/ota-5t.sym} -130 220 0 0 {name=x1}
 C {res.sym} 320 90 3 0 {name=R10
 value=R_IN
 footprint=1206
@@ -184,3 +182,5 @@ m=1}
 C {vcvs.sym} 340 230 0 0 {name=E1 value=1e6}
 C {vcvs.sym} 710 60 0 0 {name=E4 value=1e6}
 C {opin.sym} 760 -50 0 0 {name=p9 lab=VOUT_CROSS}
+C {/foss/designs/GitHub_Repo/004_Real_Circuits/ota-5t.sym} -120 -130 0 0 {name=x1}
+C {/foss/designs/GitHub_Repo/004_Real_Circuits/ota-5t.sym} -130 220 0 0 {name=x2}

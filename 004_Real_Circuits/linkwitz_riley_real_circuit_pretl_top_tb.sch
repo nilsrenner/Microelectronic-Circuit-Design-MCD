@@ -15,8 +15,11 @@ N 150 -20 640 -20 {lab=v_out_lp}
 N 640 -20 640 40 {lab=v_out_lp}
 N 60 -190 60 -70 {lab=#net1}
 N -30 -190 -30 -180 {lab=0}
-N -60 -250 60 -250 {lab=#net2}
-N -60 -250 -60 -70 {lab=#net2}
+N -30 -260 60 -260 {lab=#net2}
+N -60 -260 -60 -70 {lab=#net2}
+N -30 -260 -30 -250 {lab=#net2}
+N -60 -260 -30 -260 {lab=#net2}
+N 60 -260 60 -250 {lab=#net2}
 C {isource.sym} 60 -220 0 0 {name=I0 value=20u}
 C {vsource.sym} -30 -220 0 0 {name=V1 value=1.5 savecurrent=false}
 C {gnd.sym} -30 -180 0 0 {name=l5 lab=0}
@@ -71,4 +74,4 @@ device=resistor
 m=1}
 C {gnd.sym} 400 100 0 0 {name=l3 lab=0}
 C {lab_pin.sym} -260 0 1 0 {name=p2 sig_type=std_logic lab=v_in}
-C {/foss/designs/Repo/004_Real_Circuits/linkwtz_riley_crossover_pretl_OTA.sym} 0 0 0 0 {name=x2}
+C {/foss/designs/GitHub_Repo/004_Real_Circuits/linkwtz_riley_crossover_pretl_OTA.sym} 0 0 0 0 {name=x1}
