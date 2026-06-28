@@ -99,4 +99,4 @@ C {devices/lab_wire.sym} 760 -660 0 0 {name=p4 sig_type=std_logic lab=v_in}
 C {devices/isource.sym} 1090 -780 0 0 {name=I0 value="dc 0 pwl(0 0 1.1u 0 1.2u 20u)"}
 C {devices/spice_probe.sym} 820 -660 0 0 {name=p5 attrs=""}
 C {devices/spice_probe.sym} 1180 -630 0 0 {name=p6 attrs=""}
-C {/foss/designs/Repo/004_Real_Circuits/version_no_enable/ota-5t_no_ena_copy.sym} 1050 -630 0 0 {name=x1}
+C {004_Real_Circuits/003_version_second_output_stage/ota-5t_no_ena_copy.sym} 1060 -630 0 0 {name=x1}

@@ -54,7 +54,6 @@ C {lab_pin.sym} 400 160 2 0 {name=p5 sig_type=std_logic lab=v_out_hp
 C {lab_pin.sym} -290 90 1 0 {name=p2 sig_type=std_logic lab=v_in}
 C {gnd.sym} -370 -80 0 0 {name=l5 lab=0}
 C {gnd.sym} -290 180 0 0 {name=l1 lab=0}
-C {/foss/designs/Repo/004_Real_Circuits/second output stage/linkwtz_riley_crossover_pretl_OTA.sym} -10 110 0 0 {name=x1}
 C {lab_pin.sym} -370 -180 0 0 {name=p1 sig_type=std_logic lab=V_DD}
 C {lab_pin.sym} -30 -140 1 0 {name=p4 sig_type=std_logic lab=V_DD}
 C {lab_pin.sym} -90 -140 1 0 {name=p6 sig_type=std_logic lab=V_DD}
@@ -64,3 +63,4 @@ C {lab_pin.sym} -280 -180 0 0 {name=p7 sig_type=std_logic lab=V_SS}
 C {lab_pin.sym} -90 260 3 0 {name=p8 sig_type=std_logic lab=V_SS}
 C {lab_pin.sym} 400 110 2 0 {name=p9 sig_type=std_logic lab=v_out_cross}
 C {title.sym} -580 370 0 0 {name=l3 author="Daniel Albinger"}
+C {004_Real_Circuits/003_version_second_output_stage/linkwtz_riley_crossover_pretl_OTA.sym} -10 110 0 0 {name=x1}

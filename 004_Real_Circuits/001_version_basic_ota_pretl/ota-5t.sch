@@ -199,7 +199,7 @@ lab=vout}
 C {devices/title.sym} 160 -30 0 0 {name=l5 author="(c) 2024-2025 Harald Pretl, Apache-2.0 license"}
 C {sg13g2_pr/sg13_lv_nmos.sym} 880 -280 0 0 {name=M5
 l=5u
-w=1.0u
+w=1.5u
 ng=1
 m=1
 model=sg13_lv_nmos
@@ -207,7 +207,7 @@ spiceprefix=X
 }
 C {sg13g2_pr/sg13_lv_pmos.sym} 980 -710 0 0 {name=M4
 l=5u
-w=2.5u
+w=3.5u
 ng=1
 m=1
 model=sg13_lv_pmos
@@ -231,7 +231,7 @@ spiceprefix=X
 }
 C {sg13g2_pr/sg13_lv_pmos.sym} 840 -710 0 1 {name=M3
 l=5u
-w=2.5u
+w=3.5u
 ng=1
 m=1
 model=sg13_lv_pmos
@@ -239,7 +239,7 @@ spiceprefix=X
 }
 C {sg13g2_pr/sg13_lv_nmos.sym} 660 -280 0 1 {name=M6
 l=5u
-w=6.5u
+w=10u
 ng=5
 m=1
 model=sg13_lv_nmos
