@@ -226,7 +226,7 @@ C {devices/isource.sym} 1860 -750 2 1 {name=Itest2 value="dc 0 ac 1"}
 C {devices/vsource.sym} 1930 -840 3 0 {name=Vtest3 value="dc 0 ac 0"}
 C {devices/lab_wire.sym} 1900 -800 2 0 {name=p25 sig_type=std_logic lab=vmeas2}
 C {devices/ammeter.sym} 2030 -840 1 0 {name=Vimeas2 savecurrent=true spice_ignore=0}
-C {/foss/designs/Repo/004_Real_Circuits/second output stage/ota-5t_no_ena_copy.sym} 1350 -960 0 0 {name=x1}
-C {/foss/designs/Repo/004_Real_Circuits/second output stage/ota-5t_no_ena_copy.sym} 2110 -960 0 0 {name=x2}
-C {/foss/designs/Repo/004_Real_Circuits/second output stage/ota-5t_no_ena_copy.sym} 1350 -400 0 0 {name=x3}
-C {/foss/designs/Repo/004_Real_Circuits/second output stage/ota-5t_no_ena_copy.sym} 2110 -400 0 0 {name=x4}
+C {004_Real_Circuits/002_version_no_enable/ota-5t_no_ena_copy.sym} 1340 -960 0 0 {name=x1}
+C {004_Real_Circuits/002_version_no_enable/ota-5t_no_ena_copy.sym} 2100 -960 0 0 {name=x2}
+C {004_Real_Circuits/002_version_no_enable/ota-5t_no_ena_copy.sym} 1340 -400 0 0 {name=x3}
+C {004_Real_Circuits/002_version_no_enable/ota-5t_no_ena_copy.sym} 2100 -400 0 0 {name=x4}

@@ -127,14 +127,11 @@ C {gnd.sym} -340 300 0 0 {name=l2 lab=0}
 C {opin.sym} 0 -270 0 0 {name=p2 lab=VOUT_LP}
 C {ipin.sym} -600 -20 0 0 {name=p1 lab=VIN}
 C {iopin.sym} 30 -440 3 0 {name=p14 lab=V_DD}
-C {/foss/designs/Repo/004_Real_Circuits/second output stage/ota-5t_no_ena_copy.sym} -120 220 0 0 {name=x1}
-C {/foss/designs/Repo/004_Real_Circuits/second output stage/ota-5t_no_ena_copy.sym} -110 -130 0 0 {name=x2}
 C {opin.sym} 0 70 0 0 {name=p3 lab=VOUT_HP}
 C {iopin.sym} 70 -440 3 0 {name=p4 lab=V_SS}
 C {lab_pin.sym} -120 -240 0 0 {name=p9 sig_type=std_logic lab=V_DD}
 C {lab_pin.sym} -80 -240 2 0 {name=p11 sig_type=std_logic lab=I_BIAS}
 C {lab_pin.sym} -120 -30 0 0 {name=p15 sig_type=std_logic lab=V_SS}
-C {/foss/designs/Repo/004_Real_Circuits/second output stage/ota-5t_no_ena_copy.sym} 470 190 0 0 {name=x3}
 C {res.sym} 300 220 3 0 {name=R5
 value=R_IN
 footprint=1206
@@ -147,7 +144,6 @@ footprint=1206
 device=resistor
 m=1}
 C {iopin.sym} 110 -440 3 0 {name=p6 lab=I_BIAS}
-C {/foss/designs/Repo/004_Real_Circuits/second output stage/ota-5t_no_ena_copy.sym} 950 -160 0 0 {name=x4}
 C {res.sym} 740 -130 3 0 {name=R14
 value=R_IN
 footprint=1206
@@ -177,3 +173,7 @@ C {lab_pin.sym} 940 -50 0 0 {name=p19 sig_type=std_logic lab=V_SS}
 C {lab_pin.sym} 30 -430 3 0 {name=p20 sig_type=std_logic lab=V_DD}
 C {lab_pin.sym} 110 -430 3 0 {name=p21 sig_type=std_logic lab=I_BIAS}
 C {lab_pin.sym} 70 -430 3 0 {name=p22 sig_type=std_logic lab=V_SS}
+C {004_Real_Circuits/003_version_second_output_stage/ota-5t_no_ena_copy.sym} -110 -130 0 0 {name=x1}
+C {004_Real_Circuits/003_version_second_output_stage/ota-5t_no_ena_copy.sym} -120 220 0 0 {name=x2}
+C {004_Real_Circuits/003_version_second_output_stage/ota-5t_no_ena_copy.sym} 470 190 0 0 {name=x3}
+C {004_Real_Circuits/003_version_second_output_stage/ota-5t_no_ena_copy.sym} 950 -160 0 0 {name=x4}

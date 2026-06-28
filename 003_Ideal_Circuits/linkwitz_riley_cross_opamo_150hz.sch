@@ -71,7 +71,7 @@ N 1040 -0 1090 0 {lab=v_out_inv}
 N 1220 60 1240 60 {lab=0}
 N 1220 60 1220 120 {lab=0}
 C {gnd.sym} -310 220 0 0 {name=l3 lab=0}
-C {simulator_commands_shown.sym} -470 -270 0 0 {
+C {simulator_commands_shown.sym} -800 -270 0 0 {
 name=Libs_Ngspice1
 simulator=ngspice
 only_toplevel=false
@@ -83,7 +83,7 @@ value="
 .lib cornerDIO.lib dio_tt
 "
       }
-C {simulator_commands_shown.sym} -510 -90 0 0 {name=spice
+C {simulator_commands_shown.sym} -810 -90 0 0 {name=spice
 only_toplevel=false 
 value="
 .ac dec 10 1 100k
@@ -176,12 +176,12 @@ C {lab_pin.sym} 1500 30 0 1 {name=p4 sig_type=std_logic lab=v_out
 }
 C {lab_pin.sym} 1000 200 3 1 {name=p5 sig_type=std_logic lab=v_out_inv
 }
-C {/foss/designs/meiners/opamp1.sym} 160 -110 0 0 {name=x1}
-C {/foss/designs/meiners/opamp1.sym} 170 230 0 0 {name=x2}
-C {/foss/designs/meiners/opamp1.sym} 850 200 0 0 {name=x3}
-C {/foss/designs/meiners/opamp1.sym} 1320 30 0 0 {name=x4}
-C {param.sym} -150 -300 0 0 {name=s1 value="C_LP=1.06e-6"}
-C {param.sym} -150 -270 0 0 {name=s2 value="R_LP=1000"}
-C {param.sym} 110 -300 0 0 {name=s3 value="C_HP=1e-9"}
-C {param.sym} 110 -270 0 0 {name=s4 value="R_HP=1.06e6"}
-C {param.sym} 390 -300 0 0 {name=s5 value="R_IN=1k"}
+C {001_provided_files/2_Idealized_circuits/opamp1.sym} 160 -110 0 0 {name=x1}
+C {001_provided_files/2_Idealized_circuits/opamp1.sym} 170 230 0 0 {name=x2}
+C {001_provided_files/2_Idealized_circuits/opamp1.sym} 850 200 0 0 {name=x3}
+C {001_provided_files/2_Idealized_circuits/opamp1.sym} 1320 30 0 0 {name=x4}
+C {param.sym} -120 -300 0 0 {name=s1 value="C_LP=1.06e-8"}
+C {param.sym} -120 -280 0 0 {name=s2 value="R_LP=100k"}
+C {param.sym} 160 -300 0 0 {name=s3 value="C_HP=50e-10"}
+C {param.sym} 160 -280 0 0 {name=s4 value="R_HP=212.20k"}
+C {param.sym} 430 -300 0 0 {name=s5 value="R_IN=100k"}

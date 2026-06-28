@@ -76,5 +76,5 @@ C {lab_pin.sym} 520 -110 0 1 {name=p2 sig_type=std_logic lab=v_out
 C {vsource.sym} -190 20 0 0 {name=vin value=AC 1 savecurrent=false ac=1}
 C {gnd.sym} 50 80 0 0 {name=l1 lab=0}
 C {param.sym} -180 -290 0 0 {name=s1 value="C_LP=14.5e-9"}
-C {/foss/designs/meiners/opamp1.sym} 230 -110 0 0 {name=x1}
 C {param.sym} -180 -260 0 0 {name=s2 value="R_LP=10k"}
+C {001_provided_files/2_Idealized_circuits/opamp1.sym} 230 -110 0 0 {name=x1}

@@ -51,14 +51,15 @@ N 520 -760 520 -360 {
 lab=v_dd}
 N 1050 -830 1050 -760 {
 lab=v_dd}
-N 1050 -380 1300 -380 {
+N 1090 -380 1300 -380 {
 lab=v_ss}
 N 700 -380 1050 -380 {
 lab=v_ss}
-N 1420 -480 1420 -380 {lab=v_ss}
-N 1300 -380 1420 -380 {lab=v_ss}
-N 1420 -630 1420 -540 {lab=v_out}
-N 1300 -630 1420 -630 {lab=v_out}
+N 1090 -550 1090 -460 {
+lab=v_ena}
+N 1090 -400 1090 -380 {lab=v_ss}
+N 1050 -380 1090 -380 {
+lab=v_ss}
 C {devices/code_shown.sym} 0 -100 0 0 {name=MODEL only_toplevel=true
 format="tcleval( @value )"
 value=".lib cornerMOSlv.lib mos_tt
@@ -66,40 +67,30 @@ value=".lib cornerMOSlv.lib mos_tt
 C {devices/code_shown.sym} 0 -750 0 0 {name=NGSPICE only_toplevel=true 
 value="
 .temp 27
+
+.ic v(v_out)=0
+.option method=gear
+
 .control
-option sparse
-save all
-op
-write ota-5t_tb-ac.raw
-set appendwrite
 
-ac dec 101 100 100MEG
-write ota-5t_tb-ac.raw
-plot 20*log10(v_out)
+tran 0.005u 3u uic
+plot v_ena v_out
 
-meas ac dcgain MAX vmag(v_out) FROM=10 TO=10k
-let f3db = dcgain/sqrt(2)
-meas ac fbw WHEN vmag(v_out)=f3db FALL=1
-let gainerror=(dcgain-1)/1
-print dcgain
-print fbw
-print gainerror
-
-noise v(v_out) Vin dec 101 1k 100MEG
-print onoise_total
+let vout_limit=0.8*0.99
+meas tran tcross WHEN v(v_out)=vout_limit
+let vena_limit=0.5*1.5
+meas tran tstart WHEN v(v_ena)=vena_limit
+let tsettle=tcross-tstart
+print tsettle
 
 .endc
 "}
 C {devices/vsource.sym} 520 -330 0 0 {name=Vdd value=1.5}
 C {devices/gnd.sym} 520 -280 0 0 {name=l3 lab=GND}
 C {devices/title.sym} 160 -30 0 0 {name=l5 author="(c) 2024-2025 Harald Pretl, Apache-2.0 license"}
-C {devices/launcher.sym} 680 -160 0 0 {name=h2
+C {devices/launcher.sym} 500 -160 0 0 {name=h2
 descr="simulate" 
 tclcommand="xschem save; xschem netlist; xschem simulate"
-}
-C {devices/launcher.sym} 920 -160 0 0 {name=h3
-descr="annotate OP" 
-tclcommand="set show_hidden_texts 1; xschem annotate_op"
 }
 C {devices/lab_pin.sym} 520 -380 0 0 {name=p2 sig_type=std_logic lab=v_dd}
 C {devices/vsource.sym} 600 -330 0 0 {name=Vss value=0}
@@ -108,14 +99,12 @@ C {devices/lab_pin.sym} 600 -380 0 0 {name=p1 sig_type=std_logic lab=v_ss}
 C {devices/capa.sym} 1300 -560 0 0 {name=C1
 value=50f}
 C {devices/lab_wire.sym} 1300 -630 0 0 {name=p3 sig_type=std_logic lab=v_out}
-C {devices/vsource.sym} 700 -540 0 0 {name=Vin value="dc 0.8 ac 1"}
+C {devices/vsource.sym} 700 -540 0 0 {name=Vin value=0.8}
 C {devices/lab_wire.sym} 760 -660 0 0 {name=p4 sig_type=std_logic lab=v_in}
-C {devices/isource.sym} 1090 -780 0 0 {name=I0 value=20u pwl(0 0 10u 0 11u 20u)"}
+C {devices/isource.sym} 1090 -780 0 0 {name=I0 value="dc 0 pwl(0 0 1.1u 0 1.2u 20u)"}
 C {devices/spice_probe.sym} 820 -660 0 0 {name=p5 attrs=""}
 C {devices/spice_probe.sym} 1180 -630 0 0 {name=p6 attrs=""}
-C {devices/code_shown.sym} 0 -190 0 0 {name=SAVE only_toplevel=true
-format="tcleval( @value )"
-value=".include [file rootname [xschem get schname]].save
-"}
-C {isource.sym} 1420 -510 2 0 {name=I1 value="dc 0 ac 0"}
-C {/foss/designs/Repo/004_Real_Circuits/version_no_enable/ota-5t_no_ena_copy.sym} 1050 -630 0 0 {name=x1}
+C {004_Real_Circuits/001_version_basic_ota_pretl/ota-5t.sym} 1050 -630 0 0 {name=x1}
+C {devices/vsource.sym} 1090 -430 0 0 {name=Venable value="dc 0 pwl(0 0 1u 0 1.1u 1.5)" savecurrent=false}
+C {devices/spice_probe.sym} 1090 -470 0 0 {name=p8 attrs=""}
+C {devices/lab_wire.sym} 1090 -530 0 0 {name=p9 sig_type=std_logic lab=v_ena}
