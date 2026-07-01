@@ -87,7 +87,6 @@ lab=ibias_20u}
 N -120 200 -120 270 {lab=ibias_20u}
 N -150 270 -120 270 {
 lab=ibias_20u}
-N 290 -90 430 -90 {lab=#net1}
 N 170 -130 170 -90 {
 lab=#net1}
 N 130 -40 170 -40 {
@@ -114,10 +113,11 @@ N 470 280 490 280 {lab=vss}
 N 490 280 490 320 {lab=vss}
 N 470 320 490 320 {lab=vss}
 N 470 310 470 320 {lab=vss}
-N 440 -0 470 -0 {lab=vout}
 N 470 -60 470 -0 {lab=vout}
+N 290 -90 430 -90 {lab=#net1}
+N 290 -90 290 0 {lab=#net1}
 N 350 0 380 0 {lab=#net2}
-N 290 -90 290 -0 {lab=#net1}
+N 440 0 470 0 {lab=vout}
 N 170 -90 290 -90 {lab=#net1}
 N 470 0 570 -0 {lab=vout}
 C {sg13g2_pr/sg13_lv_nmos.sym} 50 270 0 0 {name=M5
@@ -192,19 +192,20 @@ m=1
 model=sg13_lv_nmos
 spiceprefix=X
 }
-C {res.sym} 320 0 3 0 {name=R1
-value=75k
-footprint=1206
-device=resistor
-m=1}
-C {capa.sym} 410 0 3 0 {name=C1
-m=1
-value=1p
-footprint=1206
-device="ceramic capacitor"}
 C {sg13g2_pr/annotate_fet_params.sym} 700 100 0 0 {name=annot1 ref=M5}
 C {sg13g2_pr/annotate_fet_params.sym} 700 -110 0 0 {name=annot2 ref=M1}
 C {sg13g2_pr/annotate_fet_params.sym} 860 -110 0 0 {name=annot3 ref=M2}
 C {sg13g2_pr/annotate_fet_params.sym} 700 -310 0 0 {name=annot4 ref=M3}
 C {sg13g2_pr/annotate_fet_params.sym} 860 -310 0 0 {name=annot5 ref=M4}
 C {sg13g2_pr/annotate_fet_params.sym} 870 100 0 0 {name=annot6 ref=M7}
+C {res.sym} 320 0 3 0 {name=R1
+value=65k
+footprint=1206
+device=resistor
+m=1}
+C {capa.sym} 410 0 3 0 {name=C1
+m=1
+value=950f
+footprint=1206
+device="ceramic capacitor"}
+C {sg13g2_pr/annotate_fet_params.sym} 700 250 0 0 {name=annot7 ref=M8}

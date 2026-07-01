@@ -26,7 +26,7 @@ value="
 C {simulator_commands_shown.sym} -485 -520 0 0 {name=spice
 only_toplevel=false 
 value="
-.ac dec 10 1 100k
+.ac dec 100 1 3k
 *.tran
 .save all
 .control

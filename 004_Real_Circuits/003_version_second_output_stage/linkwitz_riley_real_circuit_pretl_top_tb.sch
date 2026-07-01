@@ -34,13 +34,18 @@ value="
 .lib cornerDIO.lib dio_tt
 "
       }
-C {simulator_commands_shown.sym} -745 -410 0 0 {name=spice
+C {simulator_commands_shown.sym} -735 -510 0 0 {name=spice
 only_toplevel=false 
+
 value="
 .ac dec 10 1 100k
-*.tran
 .save all
 .control
+op
+write linkwitz_riley_crossover_pretl_OTA.raw
+set appendwrite
+
+
 run 
 *plot v_out
 plot db(v_out_lp/v_in) db(v_out_hp/v_in) db(v_out_cross/v_in) 
@@ -64,3 +69,31 @@ C {lab_pin.sym} -90 260 3 0 {name=p8 sig_type=std_logic lab=V_SS}
 C {lab_pin.sym} 400 110 2 0 {name=p9 sig_type=std_logic lab=v_out_cross}
 C {title.sym} -580 370 0 0 {name=l3 author="Daniel Albinger"}
 C {004_Real_Circuits/003_version_second_output_stage/linkwtz_riley_crossover_pretl_OTA.sym} -10 110 0 0 {name=x1}
+C {launcher.sym} -660 20 0 0 {name=h4
+descr=SimulateNGSPICE
+tclcommand="
+# Setup the default simulation commands if not already set up
+# for example by already launched simulations.
+set_sim_defaults
+puts $sim(spice,1,cmd) 
+
+# Change the Xyce command. In the spice category there are currently
+# 5 commands (0, 1, 2, 3, 4). Command 3 is the Xyce batch
+# you can get the number by querying $sim(spice,n)
+set sim(spice,1,cmd) \{ngspice  \\"$N\\" -a\}
+
+# change the simulator to be used (Xyce)
+set sim(spice,default) 0
+
+# Create FET and BIP .save file
+mkdir -p $netlist_dir
+write_data [save_params] $netlist_dir/[file rootname [file tail [xschem get current_name]]].save
+
+# run netlist and simulation
+xschem netlist
+simulate
+"}
+C {devices/launcher.sym} -660 60 0 0 {name=h2
+descr="OP annotate" 
+tclcommand="xschem annotate_op"
+}

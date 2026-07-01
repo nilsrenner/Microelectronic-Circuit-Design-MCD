@@ -46,8 +46,6 @@ N -130 120 -130 140 {lab=V_DD}
 N -30 220 -0 220 {lab=VOUT_HP}
 N 0 -130 710 -130 {lab=VOUT_LP}
 N -0 220 270 220 {lab=VOUT_HP}
-N -130 300 -130 320 {lab=V_SS}
-N -120 -50 -120 -30 {lab=V_SS}
 N 330 220 380 220 {lab=#net5}
 N 360 160 380 160 {lab=0}
 N 330 40 330 220 {lab=#net5}
@@ -66,10 +64,8 @@ N 1120 -310 1120 -160 {lab=VOUT_CROSS}
 N 1120 -160 1190 -160 {lab=VOUT_CROSS}
 N 1040 -160 1120 -160 {lab=VOUT_CROSS}
 N 830 -190 860 -190 {lab=0}
-N 940 -80 940 -50 {lab=V_SS}
 N 460 80 460 110 {lab=V_DD}
 N 500 80 500 110 {lab=I_BIAS}
-N 460 270 460 290 {lab=V_SS}
 N 940 -270 940 -240 {lab=V_DD}
 N 980 -270 980 -240 {lab=I_BIAS}
 N -120 -240 -120 -210 {lab=V_DD}
@@ -77,16 +73,16 @@ N -80 -240 -80 -210 {lab=I_BIAS}
 N 30 -440 30 -430 {lab=V_DD}
 N 110 -440 110 -430 {lab=I_BIAS}
 N 70 -440 70 -430 {lab=V_SS}
+N 940 -80 940 -50 {lab=V_SS}
+N -130 300 -130 320 {lab=V_SS}
+N -120 -50 -120 -30 {lab=V_SS}
+N 460 270 460 290 {lab=V_SS}
 C {res.sym} -510 -190 1 0 {name=R1
 value=R_LP
 footprint=1206
 device=resistor
 m=1}
-C {param.sym} -560 -550 0 0 {name=s1 value="C_LP=1.06e-8"}
-C {param.sym} -560 -530 0 0 {name=s2 value="R_LP=100k"}
-C {param.sym} -280 -550 0 0 {name=s3 value="C_HP=50e-10"}
-C {param.sym} -280 -530 0 0 {name=s4 value="R_HP=212.20k"}
-C {param.sym} -10 -550 0 0 {name=s5 value="R_IN=100k"}
+C {param.sym} -10 -550 0 0 {name=s5 value="R_IN=1meg"}
 C {res.sym} -400 -190 1 0 {name=R2
 value=R_LP
 footprint=1206
@@ -177,3 +173,7 @@ C {004_Real_Circuits/003_version_second_output_stage/ota-5t_no_ena_copy.sym} -11
 C {004_Real_Circuits/003_version_second_output_stage/ota-5t_no_ena_copy.sym} -120 220 0 0 {name=x2}
 C {004_Real_Circuits/003_version_second_output_stage/ota-5t_no_ena_copy.sym} 470 190 0 0 {name=x3}
 C {004_Real_Circuits/003_version_second_output_stage/ota-5t_no_ena_copy.sym} 950 -160 0 0 {name=x4}
+C {param.sym} -530 -550 0 0 {name=s1 value="C_LP=21.221e-9"}
+C {param.sym} -530 -520 0 0 {name=s2 value="R_LP=50k"}
+C {param.sym} -270 -550 0 0 {name=s3 value="C_HP=50e-9"}
+C {param.sym} -270 -520 0 0 {name=s4 value="R_HP=21.221k"}
