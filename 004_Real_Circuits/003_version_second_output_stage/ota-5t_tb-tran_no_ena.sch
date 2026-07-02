@@ -69,12 +69,12 @@ value="
 .control
 
 tran 0.005u 3u uic
-plot v_ena v_out
+plot v_in v_out
 
 let vout_limit=0.8*0.99
 meas tran tcross WHEN v(v_out)=vout_limit
 let vena_limit=0.5*1.5
-meas tran tstart WHEN v(v_ena)=vena_limit
+meas tran tstart WHEN v(v_in)=vena_limit
 let tsettle=tcross-tstart
 print tsettle
 
@@ -94,9 +94,9 @@ C {devices/lab_pin.sym} 600 -380 0 0 {name=p1 sig_type=std_logic lab=v_ss}
 C {devices/capa.sym} 1300 -560 0 0 {name=C1
 value=50f}
 C {devices/lab_wire.sym} 1300 -630 0 0 {name=p3 sig_type=std_logic lab=v_out}
-C {devices/vsource.sym} 700 -540 0 0 {name=Vin value=0.8}
+C {devices/vsource.sym} 700 -540 0 0 {name=Vin value="PULSE(0 1.5 1000n 0.1n 0.1n 3u 6u)"}
 C {devices/lab_wire.sym} 760 -660 0 0 {name=p4 sig_type=std_logic lab=v_in}
 C {devices/isource.sym} 1090 -780 0 0 {name=I0 value="dc 0 pwl(0 0 1.1u 0 1.2u 20u)"}
 C {devices/spice_probe.sym} 820 -660 0 0 {name=p5 attrs=""}
 C {devices/spice_probe.sym} 1180 -630 0 0 {name=p6 attrs=""}
-C {004_Real_Circuits/003_version_second_output_stage/ota-5t_no_ena_copy.sym} 1060 -630 0 0 {name=x1}
+C {003_version_second_output_stage/ota-5t_no_ena_copy.sym} 1060 -630 0 0 {name=x1}
