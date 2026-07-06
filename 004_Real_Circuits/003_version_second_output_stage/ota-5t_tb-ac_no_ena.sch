@@ -15,12 +15,6 @@ N 1050 -830 1090 -830 {
 lab=v_dd}
 N 1050 -550 1050 -380 {
 lab=v_ss}
-N 1300 -530 1300 -380 {
-lab=v_ss}
-N 1300 -630 1300 -590 {
-lab=v_out}
-N 1220 -630 1300 -630 {
-lab=v_out}
 N 1220 -630 1220 -510 {
 lab=v_out}
 N 1150 -630 1220 -630 {
@@ -51,14 +45,22 @@ N 520 -760 520 -360 {
 lab=v_dd}
 N 1050 -830 1050 -760 {
 lab=v_dd}
-N 1050 -380 1300 -380 {
-lab=v_ss}
 N 700 -380 1050 -380 {
 lab=v_ss}
 N 1420 -480 1420 -380 {lab=v_ss}
-N 1300 -380 1420 -380 {lab=v_ss}
 N 1420 -630 1420 -540 {lab=v_out}
-N 1300 -630 1420 -630 {lab=v_out}
+N 1300 -380 1420 -380 {
+lab=v_ss}
+N 1300 -630 1420 -630 {
+lab=v_out}
+N 1300 -530 1300 -380 {
+lab=v_ss}
+N 1300 -630 1300 -590 {
+lab=v_out}
+N 1050 -380 1300 -380 {
+lab=v_ss}
+N 1220 -630 1300 -630 {
+lab=v_out}
 C {devices/code_shown.sym} 0 -100 0 0 {name=MODEL only_toplevel=true
 format="tcleval( @value )"
 value=".lib cornerMOSlv.lib mos_tt
@@ -71,7 +73,8 @@ value="
 option sparse
 save all
 op
-write ota-5t_tb-ac_no_ena.raw
+set filetype=ascii
+write ota-5t_tb-ac_no_ena.raw all
 set appendwrite
 
 ac dec 101 100 100MEG
@@ -102,8 +105,6 @@ C {devices/lab_pin.sym} 520 -380 0 0 {name=p2 sig_type=std_logic lab=v_dd}
 C {devices/vsource.sym} 600 -330 0 0 {name=Vss value=0}
 C {devices/gnd.sym} 600 -280 0 0 {name=l1 lab=GND}
 C {devices/lab_pin.sym} 600 -380 0 0 {name=p1 sig_type=std_logic lab=v_ss}
-C {devices/capa.sym} 1300 -560 0 0 {name=C1
-value=50f}
 C {devices/lab_wire.sym} 1300 -630 0 0 {name=p3 sig_type=std_logic lab=v_out}
 C {devices/vsource.sym} 700 -540 0 0 {name=Vin value="dc 0.8 ac 1"}
 C {devices/lab_wire.sym} 760 -660 0 0 {name=p4 sig_type=std_logic lab=v_in}
@@ -140,3 +141,5 @@ write_data [save_params] $netlist_dir/[file rootname [file tail [xschem get curr
 xschem netlist
 simulate
 "}
+C {devices/capa.sym} 1300 -560 0 0 {name=C1
+value=50f}

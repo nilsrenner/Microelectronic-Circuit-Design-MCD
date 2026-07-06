@@ -5,12 +5,17 @@ V {}
 S {}
 F {}
 E {}
-T {1.45 < 1.5(nom) < 1.55V} -460 -340 0 0 0.4 0.4 {}
+T {1.45 < 1.5(nom) < 1.55V (anticipated, but wouldnt work)} -470 -360 0 0 0.4 0.4 {}
 T {4uA} 50 400 0 0 0.4 0.4 {}
 T {0.7 < 0.8(nom) < 0.9V} -270 -10 0 0 0.4 0.4 {}
 T {~0.7V} -80 250 2 1 0.3 0.3 {}
 T {~0.38V} 30 20 2 1 0.3 0.3 {}
 T {~0.78V} 30 -90 2 1 0.3 0.3 {}
+T {Drain Current Mirror} 710 -360 0 0 0.4 0.4 {}
+T {Differential Input Pair} 710 -170 0 0 0.4 0.4 {}
+T {Bias Current Mirror} 710 20 0 0 0.4 0.4 {}
+T {Output Common Source Amplifier
+} 1050 -170 0 0 0.4 0.4 {}
 N 70 -160 130 -160 {
 lab=gate_p}
 N -10 -110 -10 -70 {
@@ -114,12 +119,13 @@ N 490 280 490 320 {lab=vss}
 N 470 320 490 320 {lab=vss}
 N 470 310 470 320 {lab=vss}
 N 470 -60 470 -0 {lab=vout}
+N 470 0 570 -0 {lab=vout}
 N 290 -90 430 -90 {lab=#net1}
 N 290 -90 290 0 {lab=#net1}
-N 350 0 380 0 {lab=#net2}
 N 440 0 470 0 {lab=vout}
+N 290 0 300 0 {lab=#net1}
+N 360 0 380 0 {lab=#net2}
 N 170 -90 290 -90 {lab=#net1}
-N 470 0 570 -0 {lab=vout}
 C {sg13g2_pr/sg13_lv_nmos.sym} 50 270 0 0 {name=M5
 l=5u
 w=1.5u
@@ -192,20 +198,21 @@ m=1
 model=sg13_lv_nmos
 spiceprefix=X
 }
-C {sg13g2_pr/annotate_fet_params.sym} 700 100 0 0 {name=annot1 ref=M5}
-C {sg13g2_pr/annotate_fet_params.sym} 700 -110 0 0 {name=annot2 ref=M1}
-C {sg13g2_pr/annotate_fet_params.sym} 860 -110 0 0 {name=annot3 ref=M2}
-C {sg13g2_pr/annotate_fet_params.sym} 700 -310 0 0 {name=annot4 ref=M3}
-C {sg13g2_pr/annotate_fet_params.sym} 860 -310 0 0 {name=annot5 ref=M4}
-C {sg13g2_pr/annotate_fet_params.sym} 870 100 0 0 {name=annot6 ref=M7}
-C {res.sym} 320 0 3 0 {name=R1
-value=65k
-footprint=1206
-device=resistor
-m=1}
-C {capa.sym} 410 0 3 0 {name=C1
+C {sg13g2_pr/annotate_fet_params.sym} 840 60 0 0 {name=annot1 ref=M5}
+C {sg13g2_pr/annotate_fet_params.sym} 710 -130 0 0 {name=annot2 ref=M1}
+C {sg13g2_pr/annotate_fet_params.sym} 830 -130 0 0 {name=annot3 ref=M2}
+C {sg13g2_pr/annotate_fet_params.sym} 710 -320 0 0 {name=annot4 ref=M3}
+C {sg13g2_pr/annotate_fet_params.sym} 830 -320 0 0 {name=annot5 ref=M4}
+C {sg13g2_pr/annotate_fet_params.sym} 1050 -130 0 0 {name=annot6 ref=M7}
+C {sg13g2_pr/annotate_fet_params.sym} 1050 60 0 0 {name=annot7 ref=M8}
+C {sg13g2_pr/annotate_fet_params.sym} 710 60 0 0 {name=annot8 ref=M6}
+C {capa.sym} 410 0 3 0 {name=C2
 m=1
 value=950f
 footprint=1206
 device="ceramic capacitor"}
-C {sg13g2_pr/annotate_fet_params.sym} 700 250 0 0 {name=annot7 ref=M8}
+C {res.sym} 330 0 3 0 {name=R1
+value=65k
+footprint=1206
+device=resistor
+m=1}
