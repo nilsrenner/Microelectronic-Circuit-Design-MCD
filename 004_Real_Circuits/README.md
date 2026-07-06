@@ -10,7 +10,16 @@ This folder contains all attemps to convert the ideal linkwitz riley crossover i
 
 ## linkwitz-riley crossover with the basic OTA from Prof. Pretl
 This version of the linkwitz-riley crossover is based on the Basic OTA from Prof. Pretl. There are no modifications, besides the sizing, done to it. This design is the starting point for an own OTA design.
+![Top level testbench of the linkwitz riley crossover based on the basic OTA from Prof. Prelt](./001_version_basic_ota_pretl/pictures/top_tb_linkwitz_riley_basic_ota.png)
+
+
+
 In order to size the OTA, the sizing script for the Basic OTA from Prof. Pretl is used.
+
+
+
+
+
 
 ## linkwitz-riley crossover with the modified OTA
 
