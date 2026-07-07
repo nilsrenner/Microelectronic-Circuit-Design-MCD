@@ -31,7 +31,7 @@ The diffrenital input pair consists of the NMOS M1 and M2. These two MOSFETs cre
 
 In order to size each MOSFET properly, the sizing script from Prof. Pretl is used. The sizing parameters for the enable circuit MOSFETS (M7 to M13) are not changed.
 | MOSFET  | $gm/I_\mathrm{d}$| Length $L$| Width $W$| Comment   |
-|-------|-----|-------|
+|-------|-----|-------|-------|-------|
 | M1 | 12| $5\\,\mathrm{\mu m}$| $2\\,\mathrm{\mu m}$| In order to create a symmetrical OTA, M1 and M2 have to be sized with the same $gm/I_\mathrm{d}$|
 | M2 | 12| $5\\,\mathrm{\mu m}$| $2\\,\mathrm{\mu m}$| In order to create a symmetrical OTA, M1 and M2 have to be sized with the same $gm/I_\mathrm{d}$|
 | M3 | 8| $5\\,\mathrm{\mu m}$| $3.5\\,\mathrm{\mu m}$| In order to create a symmetrical OTA, M3 and M4 have to be sized with the same $gm/I_\mathrm{d}$|
