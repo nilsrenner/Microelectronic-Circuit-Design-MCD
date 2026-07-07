@@ -23,14 +23,22 @@ $$
 Magnitude reponse of the second order Butterworth lowpass (blue) and the second order Butterworth highpass (orange). The magnitude reponse of both filters cross each other at their cut-off frequency $f\_\mathrm{c}=150\\,\mathrm{Hz}$ at $-6\\,\mathrm{dB}$.
 
 </div>
-The lowpass and highpass filter operate as a frequency splitter, as shown in the upper plot. Both magnitude reponses cross each other at $f\_\mathrm{c}=150\\,\mathrm{Hz}$ at $-6\\,\mathrm{dB}$. With this setup of the filters is it possible to split the bass from rest in audio signal.
-In Order to achieve the flat line cross, the output signal of the filters must be added together. This means the transferfunctions of both filters must be added togehter, but there is a problem. Like in the real LRC, both output signals are $180\\degree$ out of phase to each other. Therefore, one output signal has to be inverted or delayed by $180\\degree$ or the sum of both filter outputs would be a notch filter.
+
+The lowpass and highpass filter togehter operate as a frequency splitter, as shown in the upper plot. Both magnitude reponses cross each other at $f_\mathrm{c}=150\\,\mathrm{Hz}$ at $-6\\,\mathrm{dB}$. With this setup of the filters is it possible to split the bass from rest in an audio signal. The butterworth filters are designed in a way, when the two magnitude responses are added togehter, the corresponding magnitude response is at $0\,\text{dB}$, means a flat line. This flat line is wanted by the audio community, because this means, that the audio signal is not distorted in any way. In Order to achive the flat line, one transferfunction needs to be inverted, before they are added togehter. In this case the highpass transferfunction is inverted.
+
+<div align="center">
+
+![xxx](./pictures/cross_with_and_without_invertation.png)
+
+Magnitude reponse of the cross. The blue line represents the cross without an invertation of the highpass transferfunction and the orange line with an invertation of the highpass transferfucntion. 
+
+</div>
+The plot above shows the magnitude response of the cross. When the highpass transferfunction is not inverted (blue), the corresponding magnitude response is similar to a notch filter. This is caused by the fact, that the ouput signals of low- and highpass are 180° out of phase to each other. This is the reason, why the highpass transferfunction is inverted or delayed by 180° before the two transferfunctions are added togehter. 
 
 
 
 
-These two filters togehter will operate as a frequency splitter. It is used to split an audiosignal into indviduell bands, for example bass and mids. The two Butterworth filters are designed in a way, that the magnitude response of both filtrs cross each other at $-6\,\text{dB}$. This means, that their cut-off frequency $f_\mathrm{c}$ has to be the same.
-The butterworth filters are designed that way, because when the two magnitude responses are added togehter, the corresponding magnitude response is at $0\,\text{dB}$, means a flat line. This flat line is wanted by the audio community, because this means, that the audio signal is not distorted in any way.
+
 
 
 
