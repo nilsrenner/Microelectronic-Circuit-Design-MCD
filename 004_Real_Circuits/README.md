@@ -9,7 +9,17 @@ This folder contains all attemps to convert the ideal linkwitz riley crossover i
 | 003_version_second_output_stage | OTA with extra Amplifier| Contains a linkwitz riley crossover based on the basic OTA without the enable circuit. There is an extra output amplifier added to it in order to achive more gain |
 
 ## linkwitz-riley crossover with the basic OTA from Prof. Pretl
-This version of the linkwitz-riley crossover is based on the Basic OTA from Prof. Pretl. There are no modifications, besides the sizing, done to it. This design is the starting point for an own OTA design.
+This version of the Linkwitz-riley crossover is based on a unmodified version of the basic OTA from Prof. Pretl. This version is the starting piont of the design for real circuit. This version is the first attempt to design a Linkwitz-Riley crossover based on a real OTA.
+
+### Schematic and sizing of the used OTA
+
+
+
+
+
+
+### Testbenches
+In order to properly test the OTA and the Linkwitz-riley crossover multiple testbenches are used. Each Testbench has a different purpose.
 ![Top level testbench of the linkwitz riley crossover based on the basic OTA from Prof. Prelt](./001_version_basic_ota_pretl/pictures/top_tb_linkwitz_riley_basic_ota.png)
 
 
