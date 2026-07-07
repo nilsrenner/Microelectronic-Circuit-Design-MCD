@@ -86,7 +86,7 @@ C {param.sym} -700 -420 0 0 {name=s1 value="C_LP=1.06e-8"}
 C {param.sym} -700 -400 0 0 {name=s2 value="R_LP=100k"}
 C {param.sym} -420 -420 0 0 {name=s3 value="C_HP=50e-10"}
 C {param.sym} -420 -400 0 0 {name=s4 value="R_HP=212.20k"}
-C {param.sym} -150 -420 0 0 {name=s5 value="R_IN=100k"}
+C {param.sym} -150 -420 0 0 {name=s5 value="R_IN=1meg"}
 C {res.sym} -540 -60 1 0 {name=R2
 value=R_LP
 footprint=1206
