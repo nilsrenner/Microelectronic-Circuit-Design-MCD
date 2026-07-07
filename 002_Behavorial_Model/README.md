@@ -6,15 +6,18 @@ The objective of this behavorial model is to represent a second order LRC. The L
 
 
 ## Linkwitz-riley crossover
-The behaivoral model is based on the transfer function the second order LRC. A second order LRC consits of a high- and lowpass Butterworth filter in parallel, which are implemented using a Sallen-Key topologie. 
-
+The behaivoral model is based on the transfer function the second order LRC. A second order LRC consits of a high- and lowpass Butterworth filter in parallel, which are implemented using a Sallen-Key topologie. This means, that two individuell transferfunction, one for the lowpass and one for the highpass, have to be implemented first.
+The second order butterworth lowpass can be described as following:
 $$
-H(s)= \\frac{w_{0}^2}{s^2+\\frac{w_\mathrm{0}^2}{Q_\mathrm{0}}s+w_\mathrm{0}^2}
+H(s)= \\frac{\omega_{0}^2}{s^2+\\frac{\omega_\mathrm{0}^2}{Q_\mathrm{0}}s+\omega_\mathrm{0}^2}
 $$
+And the second order butterworth highpass:
+$$
+H(s)= \\frac{s^2}{s^2+\\frac{\omega_\mathrm{0}^2}{Q_\mathrm{0}}s+\omega_\mathrm{0}^2}
+$$
+where $\omega_{0}=2\cdot\pi\cdot f_{c}$.
 
-
-
-
+![Plot of the 2nd order Butterworth high- and lowpass filter implemented via the Sallen-Key topologie.](./pictures/Butterworth Sallen key implementation.png)
 
 
 These two filters togehter will operate as a frequency splitter. It is used to split an audiosignal into indviduell bands, for example bass and mids. The two Butterworth filters are designed in a way, that the magnitude response of both filtrs cross each other at $-6\,\text{dB}$. This means, that their cut-off frequency $f_\mathrm{c}$ has to be the same.
