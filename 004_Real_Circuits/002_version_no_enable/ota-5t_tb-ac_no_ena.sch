@@ -63,18 +63,24 @@ C {devices/code_shown.sym} 0 -100 0 0 {name=MODEL only_toplevel=true
 format="tcleval( @value )"
 value=".lib cornerMOSlv.lib mos_tt
 "}
-C {devices/code_shown.sym} 0 -750 0 0 {name=NGSPICE only_toplevel=true 
+C {devices/code_shown.sym} -120 -880 0 0 {name=NGSPICE only_toplevel=true 
 value="
 .temp 27
 .control
 option sparse
 save all
-op
-write ota-5t_tb-ac.raw
-set appendwrite
 
+* DC-OP, kein raw nötig für spr
+op
+
+* Ab hier: ASCII für AC-Analyse
+set filetype=ascii
+set appendwrite = false    ; optional, aber klarer
+
+* AC-Analyse, direkt in neue Datei schreiben
 ac dec 101 100 100MEG
-write ota-5t_tb-ac.raw
+write ota-5t_tb-ac.raw all
+
 plot 20*log10(v_out)
 
 meas ac dcgain MAX vmag(v_out) FROM=10 TO=10k
@@ -85,7 +91,10 @@ print dcgain
 print fbw
 print gainerror
 
+* Noise-Analyse: entweder eigene Datei oder nur Terminal
 noise v(v_out) Vin dec 101 1k 100MEG
+* optional: eigene raw-Datei
+* write ota-5t_tb-noise.raw all
 print onoise_total
 
 .endc
@@ -93,10 +102,6 @@ print onoise_total
 C {devices/vsource.sym} 520 -330 0 0 {name=Vdd value=1.5}
 C {devices/gnd.sym} 520 -280 0 0 {name=l3 lab=GND}
 C {devices/title.sym} 160 -30 0 0 {name=l5 author="(c) 2024-2025 Harald Pretl, Apache-2.0 license"}
-C {devices/launcher.sym} 680 -160 0 0 {name=h2
-descr="simulate" 
-tclcommand="xschem save; xschem netlist; xschem simulate"
-}
 C {devices/launcher.sym} 920 -160 0 0 {name=h3
 descr="annotate OP" 
 tclcommand="set show_hidden_texts 1; xschem annotate_op"
@@ -119,3 +124,27 @@ value=".include [file rootname [xschem get schname]].save
 "}
 C {isource.sym} 1420 -510 2 0 {name=I1 value="dc 0 ac 0"}
 C {004_Real_Circuits/002_version_no_enable/ota-5t_no_ena_copy.sym} 1050 -630 0 0 {name=x1}
+C {launcher.sym} 650 -160 0 0 {name=h4
+descr=SimulateNGSPICE
+tclcommand="
+# Setup the default simulation commands if not already set up
+# for example by already launched simulations.
+set_sim_defaults
+puts $sim(spice,1,cmd) 
+
+# Change the Xyce command. In the spice category there are currently
+# 5 commands (0, 1, 2, 3, 4). Command 3 is the Xyce batch
+# you can get the number by querying $sim(spice,n)
+set sim(spice,1,cmd) \{ngspice  \\"$N\\" -a\}
+
+# change the simulator to be used (Xyce)
+set sim(spice,default) 0
+
+# Create FET and BIP .save file
+mkdir -p $netlist_dir
+write_data [save_params] $netlist_dir/[file rootname [file tail [xschem get current_name]]].save
+
+# run netlist and simulation
+xschem netlist
+simulate
+"}

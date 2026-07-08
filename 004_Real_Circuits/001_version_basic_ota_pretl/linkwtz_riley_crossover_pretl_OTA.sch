@@ -79,7 +79,7 @@ N 730 -130 890 -130 {lab=VOUT_CROSS}
 N 890 -130 890 10 {lab=VOUT_CROSS}
 N 860 10 890 10 {lab=VOUT_CROSS}
 N 890 10 930 10 {lab=VOUT_CROSS}
-N 760 90 760 110 {lab=0}
+N 760 90 760 110 {lab=V_SS}
 N 390 300 390 320 {lab=V_SS}
 N 430 300 430 320 {lab=V_DD}
 N 800 90 800 110 {lab=V_DD}
@@ -185,7 +185,7 @@ C {param.sym} -500 -560 0 0 {name=s1 value="C_LP=1.06e-8"}
 C {param.sym} -500 -540 0 0 {name=s2 value="R_LP=100k"}
 C {param.sym} -220 -560 0 0 {name=s3 value="C_HP=50e-10"}
 C {param.sym} -220 -540 0 0 {name=s4 value="R_HP=212.20k"}
-C {param.sym} 50 -560 0 0 {name=s5 value="R_IN=100k"}
+C {param.sym} 50 -560 0 0 {name=s5 value="R_IN=1meg"}
 C {iopin.sym} 410 -420 3 0 {name=p19 lab=V_SS}
 C {lab_pin.sym} 410 -410 3 0 {name=p22 sig_type=std_logic lab=V_SS}
 C {lab_pin.sym} -120 -30 0 0 {name=p23 sig_type=std_logic lab=V_SS}
