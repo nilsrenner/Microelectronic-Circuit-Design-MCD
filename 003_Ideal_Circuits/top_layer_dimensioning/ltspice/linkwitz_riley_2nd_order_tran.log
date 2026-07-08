@@ -1,0 +1,48 @@
+Circuit: * C:\users\nils\Documents\001_Studium\002_Electronics_Engeneering_M_Sc\001_Semester1\001_Microelectronics_Circuit_Design_MCD\ltspice\linkwitz_riley_2nd_order_tran.asc
+
+Early termination of direct N-R iteration.
+Direct Newton iteration failed to find .op point.  (Use ".option noopiter" to skip.)
+Starting Gmin stepping
+Gmin = 10
+vernier = 0.5
+vernier = 0.25
+vernier = 0.125
+Gmin = 5.5165
+vernier = 0.0625
+vernier = 0.03125
+vernier = 0.015625
+vernier = 0.0078125
+Gmin = 5.48432
+vernier = 0.00390625
+vernier = 0.00195313
+vernier = 0.000976563
+vernier = 0.000488281
+Gmin = 0
+Gmin stepping failed
+
+Starting source stepping with srcstepmethod=0
+Source Step = 3.0303%
+Source Step = 33.3333%
+Source Step = 63.6364%
+Source Step = 93.9394%
+Source stepping succeeded in finding the operating point.
+
+
+Date: Wed Jul 08 12:01:07 2026
+Total elapsed time: 1.394 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 5934
+traniter = 4152
+tranpoints = 2077
+accept = 2068
+rejected = 9
+matrix size = 219
+fillins = 2604
+solver = Normal
+Thread vector: 10.5/7.1[5] 4.1/2.6[5] 5.3/2.5[5] 1.3/1.9[1]  2592/500
+Matrix Compiler1:   21815 opcodes  43.6/[17.7]/19.4
+Matrix Compiler2: 64.92 KB object code size  10.0/5.3/[3.7]
+
