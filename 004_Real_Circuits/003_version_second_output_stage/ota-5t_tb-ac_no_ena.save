@@ -1,6 +1,6 @@
 * Place this .save file with a .include line in your testbench
 
-.save @n.xota.xm5.nsg13_lv_nmos[ids]
+.save @n.x1.xm5.nsg13_lv_nmos[ids]
 .save @n.xota.xm5.nsg13_lv_nmos[gm]
 .save @n.xota.xm5.nsg13_lv_nmos[gds]
 .save @n.xota.xm5.nsg13_lv_nmos[vth]
