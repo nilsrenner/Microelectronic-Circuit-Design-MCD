@@ -208,11 +208,11 @@ C {sg13g2_pr/annotate_fet_params.sym} 1050 60 0 0 {name=annot7 ref=M8}
 C {sg13g2_pr/annotate_fet_params.sym} 710 60 0 0 {name=annot8 ref=M6}
 C {capa.sym} 410 0 3 0 {name=C2
 m=1
-value=950f
+value=795f
 footprint=1206
 device="ceramic capacitor"}
 C {res.sym} 330 0 3 0 {name=R1
-value=65k
+value=59k
 footprint=1206
 device=resistor
 m=1}

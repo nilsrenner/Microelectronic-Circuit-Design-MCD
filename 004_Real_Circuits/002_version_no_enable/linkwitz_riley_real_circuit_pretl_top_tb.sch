@@ -18,9 +18,9 @@ N -520 -120 -520 -80 {lab=V_SS}
 N -80 120 -80 180 {lab=V_SS}
 N -620 -20 -620 0 {lab=0}
 N -520 -20 -520 -0 {lab=0}
-C {isource.sym} -20 -210 0 0 {name=I_BIAS value=80u}
-C {vsource.sym} -620 -50 0 0 {name=V_DD value=0.75 savecurrent=false}
-C {vsource.sym} -290 30 0 0 {name=vin1 value=AC 1 savecurrent=false ac=1}
+C {isource.sym} -20 -210 0 0 {name=I_BIAS value=40u}
+C {vsource.sym} -620 -50 0 0 {name=V_DD value=1.5 savecurrent=false}
+C {vsource.sym} -290 30 0 0 {name=vin1 value="DC 0.8 AC 1" savecurrent=false ac=1}
 C {simulator_commands_shown.sym} -830 -440 0 0 {
 name=Libs_Ngspice1
 simulator=ngspice
@@ -33,20 +33,6 @@ value="
 .lib cornerDIO.lib dio_tt
 "
       }
-C {simulator_commands_shown.sym} -845 -690 0 0 {name=spice
-only_toplevel=false 
-value="
-.ac dec 10 1 100k
-*.tran
-.save all
-.control
-run 
-*plot v_out
-plot db(v_out_lp/v_in) db(v_out_hp/v_in) db(v_out_cross/v_in) 
-
-.endc
-"
-      }
 C {lab_pin.sym} 300 -50 2 0 {name=p3 sig_type=std_logic lab=v_out_lp}
 C {lab_pin.sym} 300 0 2 0 {name=p4 sig_type=std_logic lab=v_out_cross}
 C {lab_pin.sym} 300 50 2 0 {name=p5 sig_type=std_logic lab=v_out_hp
@@ -54,7 +40,7 @@ C {lab_pin.sym} 300 50 2 0 {name=p5 sig_type=std_logic lab=v_out_hp
 C {lab_pin.sym} -250 0 1 0 {name=p2 sig_type=std_logic lab=v_in}
 C {gnd.sym} -290 80 0 0 {name=l1 lab=0}
 C {lab_pin.sym} -620 -120 1 0 {name=p1 sig_type=std_logic lab=V_DD}
-C {vsource.sym} -520 -50 2 0 {name=V_SS value=0.75 savecurrent=false}
+C {vsource.sym} -520 -50 2 0 {name=V_SS value=0.0 savecurrent=false}
 C {lab_pin.sym} -80 -260 1 0 {name=p6 sig_type=std_logic lab=V_DD}
 C {lab_pin.sym} -20 -260 1 0 {name=p7 sig_type=std_logic lab=V_DD}
 C {lab_pin.sym} -520 -120 1 0 {name=p8 sig_type=std_logic lab=V_SS}
@@ -63,3 +49,26 @@ C {gnd.sym} -620 0 0 0 {name=l2 lab=0}
 C {gnd.sym} -520 0 0 0 {name=l3 lab=0}
 C {title.sym} -620 250 0 0 {name=l4 author="Daniel Albinger"}
 C {004_Real_Circuits/002_version_no_enable/linkwtz_riley_crossover_pretl_OTA.sym} 0 0 0 0 {name=x1}
+C {simulator_commands_shown.sym} -855 -840 0 0 {name=spice
+only_toplevel=false 
+
+value="
+*.include linkwitz_riley_real_circuit_pretl_top_tb.save
+.temp 27
+.ac dec 10 1 100k
+.option sparse
+.save all
+.control
+
+op
+write linkwitz_riley_crossover_pretl_OTA.raw
+set appendwrite
+
+
+run 
+
+plot db(v_out_lp) db(v_out_hp) db(v_out_cross) 
+
+.endc
+"
+      }
