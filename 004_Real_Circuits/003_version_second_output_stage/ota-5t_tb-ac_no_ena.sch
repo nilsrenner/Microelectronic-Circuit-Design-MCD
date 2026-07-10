@@ -108,7 +108,7 @@ C {devices/lab_pin.sym} 600 -380 0 0 {name=p1 sig_type=std_logic lab=v_ss}
 C {devices/lab_wire.sym} 1300 -630 0 0 {name=p3 sig_type=std_logic lab=v_out}
 C {devices/vsource.sym} 700 -540 0 0 {name=Vin value="dc 0.8 ac 1"}
 C {devices/lab_wire.sym} 760 -660 0 0 {name=p4 sig_type=std_logic lab=v_in}
-C {devices/isource.sym} 1090 -780 0 0 {name=I0 value=20u pwl(0 0 10u 0 11u 20u)"}
+C {devices/isource.sym} 1090 -780 0 0 {name=I0 value=30u pwl(0 0 10u 0 11u 20u)"}
 C {devices/spice_probe.sym} 820 -660 0 0 {name=p5 attrs=""}
 C {devices/spice_probe.sym} 1180 -630 0 0 {name=p6 attrs=""}
 C {devices/code_shown.sym} 0 -190 0 0 {name=SAVE only_toplevel=true
