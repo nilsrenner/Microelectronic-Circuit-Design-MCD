@@ -1,31 +1,43 @@
 # Behavorial Model of the Linkwitz-riley crossover
-This Folder contains a mathematical representation, also called behaivoral model, of the Linkwitz-riley crossover (LRC). The behavorial model is implemented via python using jupyter notebook. The behaivoral model should give an idea about how the LRC works and which results can expected.
+This folder contains a mathematical reprensentation, also behavioral model, of the second order Linkwitz-Riley crossover (LRC). The behavioral model is implemented via python using jupyter notebook. The behaivoral model can provide an idea about how the LRC works and which results can be expected from it.
+
 
 ## Parameters of the behavorial model
-The objective of this behavorial model is to represent a second order LRC. The LRC should have its cross at $f_\mathrm{c}=150 \\, \text{Hz}$. This frequency marks the border between the bass and the mids in a audio signal. This means that the cut-off frequency of the butterworth lowpass and the butterworth highpass also have to be $f_\mathrm{c}=150\\, \text{Hz}$. Because Butterworth filters are used, the Qualtiy of both filters ist $Q_\mathrm{0}=\\frac{1}{2}$.
-Both filters are implemented using the Sallen-Key topologie, means both filters are second order filters and should have an expected attenuation of $40\\,\text{dB}$ per decade.
+
+Parameters for the second order LRC: 
+* $f_\mathrm{0}=150\,\mathrm{Hz}$
+* $Q_\mathrm{0}=\frac{1}{2}$
+* Second order butterworth filters implemented via Sallen-Key topology
+
+
 
 
 ## Linkwitz-riley crossover
-The behaivoral model is based on the transfer function the second order LRC. A second order LRC consits of a high- and lowpass Butterworth filter in parallel, which are implemented using a Sallen-Key topologie. This means, that two individuell transferfunction, one for the lowpass and one for the highpass, have to be implemented first.
-The second order butterworth lowpass can be described as following:
 
+The behavioral model of the second order LRC is based on its transfer function. A second order LRC consists of a second order low- and highpass butterworth in parallel, which are both implemented via the Sallen-key topology. This means, that the LRC actually consists out of two seperat transferfunctions, which are combined in the end.
+The second order butterworth lowpass in the LRC can be described with the following transferfunction.
 $$
-H(s) = \\frac{\\omega\_0^2}{s^2 + \\frac{\\omega\_\mathrm{0}^2}{Q\_\mathrm{0}} s + \\omega\_\mathrm{0}^2}
+H(s)= \frac{\omega_\mathrm{0}^2}{s^2 + \frac{\omega_\mathrm{0}^2}{Q_\mathrm{0}} s + \omega_\mathrm{0}^2}
 $$
-And the second order butterworth Highpass:
+And the second order butterworth Highpass as following.
 $$
 H(s) = \frac{s^2}{s^2 + \frac{\omega_\mathrm{0}^2}{Q_\mathrm{0}} s + \omega_\mathrm{0}^2}
 $$
+Because both filters are Butterworth filters a smooth transitionband can be expected. Because of the Sallen-key topology, both filters are second order Butterworth filters. The second order should result in $40\,\mathrm{dB}$ attenuation per decade for both filters.
+
+
 <div align="center">
 
 ![xxx](./pictures/Butterworth_Sallen_key_implementation.png)
 
-Magnitude reponse of the second order Butterworth lowpass (blue) and the second order Butterworth highpass (orange). The magnitude reponse of both filters cross each other at their cut-off frequency $f\_\mathrm{c}=150\\,\mathrm{Hz}$ at $-6\\,\mathrm{dB}$.
+The Magnitude response of both second order Butterworth filters. 
 
 </div>
 
-The lowpass and highpass filter togehter operate as a frequency splitter, as shown in the upper plot. Both magnitude reponses cross each other at $f_\mathrm{c}=150\\,\mathrm{Hz}$ at $-6\\,\mathrm{dB}$. With this setup of the filters is it possible to split the bass from rest in an audio signal. The butterworth filters are designed in a way, when the two magnitude responses are added togehter, the corresponding magnitude response is at $0\,\text{dB}$, means a flat line. This flat line is wanted by the audio community, because this means, that the audio signal is not distorted in any way. In Order to achive the flat line, one transferfunction needs to be inverted, before they are added togehter. In this case the highpass transferfunction is inverted.
+The plot in figure above shows the magnitude response of both filtrs. The magnitude response of the lowpass (blue) and the highpass (orange) cross each other at $f_\mathrm{0}=150\,\mathrm{Hz}$ at $-6\,\mathrm{dB}$. The magnitude from both filters falls with roughly $-40\,\mathrm{dB}$ per decade. 
+
+The filters together operate as frequency splitter. Because of the parallel implementation of the filters, the frequencies inside the incoming audio signal can be split into two bands. This filtersetup will seperate the bass from the rest of the audiospectrum.\
+The two butterworth filters are designed in a way that, when the two magnitude responses are added together, the corresponding magnitude response would be at $0\,\text{dB}$, in other words, a flat line. This flat line of the corresponding magnitude response is wanted in audio community. The flat line means, that the outcoming audio signal is not distorted in any way. In Order to achive the flat line, one output signal from the filters has to be delayed by 180° or the transferfunction of one filter has to be inverted, before the two magnitude reponses can be added togehter. This because the output signals of both filters are 180° out of phase to each other. If the one signal is not delayed, the corresponding magnitude response would be a bandstop. In this case, the transferfunction of the highpass filter is inverted.
 
 <div align="center">
 
@@ -35,7 +47,7 @@ Magnitude reponse of the cross. The blue line represents the cross without an in
 
 </div>
 
-The plot above shows the magnitude response of the cross. When the highpass transferfunction is not inverted (blue), the corresponding magnitude response is similar to a notch filter. This is caused by the fact, that the ouput signals of low- and highpass are 180° out of phase to each other. This is the reason, why the highpass transferfunction is inverted or delayed by 180° before the two transferfunctions are added togehter. 
+The plot above shows the magnitude response of the cross. When the highpass transferfunction is not inverted (blue), the corresponding magnitude response is similar to a notch filter. This is due to the above mentioned fact. With the invertation of the highpass transferfuntion or the delay of the phase by 180°, the cross results in the wanted flat line.
 
 
 <div align="center">
@@ -46,8 +58,9 @@ Full magnitude response of the second order LRC. The orange line represents the 
 
 </div>
 
-The plot above shows the full magnitude response of the LRC. The second order lowpass (orange) and the second highpass (green) cross, like before, 
-each other at $f_\mathrm{c} = 150\\,\mathrm{Hz}$ at $-6\\,\mathrm{dB}$. They also both reach the anticipated $40\\,\text{dB}$ attenuation per decade. The sum of the lowpass and the inverted highpass transferfunction is shown by the blue line. This line reprensets the cross. As expected, the cross is at $0\\,\text{dB}$ and flat. This will cause no disturtions to the audio signal. 
+The plot in the figure above shows the full magnitude response of the second order LRC. The magnitude responses of the lowpass (orange) and the highpass (green) cross each other, like before, at $f_\mathrm{0}=150\,\mathrm{Hz}$ at $-6\,\mathrm{dB}$. The cross is at the wanted $0\,\mathrm{dB}$. This will cause no distortions to the audio signal.
+
+ 
 
 
 

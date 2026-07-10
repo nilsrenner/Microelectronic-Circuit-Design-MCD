@@ -1,19 +1,20 @@
 # Real circuits
-This folder contains all attemps to convert the ideal linkwitz riley crossover into a real circuit design. There multiple different versions of the crossover circuit in this folder. Each one is based on a slightly different OTA. All testbenches are in a hierarchical schematic.
+This subfolder of the repository contains the designs of a linkwitz-riley-crossover (LRC) based on real OTA. The objective in this folder is to convert the LRC, based on ideal opamps, into a LRC which is based on a real OTA design. There three different variants of the OTA design. 
+
 ## Contents
 | Folder  | Content |  Description   |
 |-------|-----|-------|
-| 000_ota_sizing_scripts | Sizing scripts  | Sizing scripts from Prof. Pretl. They are used to properly size the OTA |
-| 001_version_basic_ota_pretl | Basic OTA | Contains a linkwitz-riley crossover based on the basic OTA from Prof. Pretl |
-| 002_version_no_enable | OTA without enable circuit | Contains a linkwitz-riley crossover with a modified basic OTA from Prof. Pretl. The enable circuit of the OTA was removed for the sake of simplicity.  |
-| 003_version_second_output_stage | OTA with extra Amplifier| Contains a linkwitz riley crossover based on the basic OTA without the enable circuit. There is an extra output amplifier added to it in order to achive more gain |
+| 000_ota_sizing_scripts | Sizing scripts  | This subfolder contains the sizing scripts, which are used to size the MOSFETs inside each OTA design. The sizing scripts are from Prof. Pretl. For the OTA designs in this folder, only the sizing script for the basic OTA is used. It is slightly modified, in order to size all MOSFETs in the OTA designs.|
+| 001_version_basic_ota_pretl | Basic OTA | This folder contains a LRC design, which is based on the basic OTA design from Prof. Pretl|
+| 002_version_no_enable | OTA without enable circuit | This folder contains a LRC design based on a OTA desing, which has the enable circuit removed. This OTA design is the simpliest design for an OTA. |
+| 003_version_second_output_stage | OTA with extra Amplifier| This LRC design is based on the OTA design without the enable cirucit, but with an extra amplifier stage at the output of the differential input pair. |
 
 ## Technologie
-All MOSFETs in this repository are based on the SG13G2 Technology from IHP Microelectronics. The SG13G2 technology is a 130nm BiCMOS Technologie. [IHP Microelectronic](https://github.com/IHP-GmbH/IHP-Open-PDK/blob/main/ihp-sg13g2/libs.doc/doc/SG13G2_os_process_spec.pdf)
+The MOSFETs used for the OTA designs are based on the SG13G2 technology from IHP Microelectronics. This technologie is BiCMOs technology and is a 130nm process.[IHP Microelectronic](https://github.com/IHP-GmbH/IHP-Open-PDK/blob/main/ihp-sg13g2/libs.doc/doc/SG13G2_os_process_spec.pdf)
 
 
 ## linkwitz-riley crossover with the basic OTA from Prof. Pretl
-This version of the Linkwitz-riley crossover is based on a unmodified version of the basic OTA from Prof. Pretl. This version is the starting piont of the design for real circuit. This version is the first attempt to design a Linkwitz-Riley crossover based on a real OTA.
+This version of the Linkwitz-riley crossover is based on a unmodified version of the basic OTA from Prof. Pretl. This version is the starting piont of the design for real circuit and the first attempt to design a Linkwitz-Riley crossover based on a real OTA.
 
 ### Schematic and sizing of the used OTA
 <div align="center">
@@ -24,11 +25,13 @@ Schematic of the basic OTA desgin from Prof. Pretl.
 
 </div>
 
-The schematic above shows the basic OTA design from Prof. Pretls analog circuit design repository. [Analog-circuit-design Repository](https://github.com/iic-jku/analog-circuit-design)
+The schematic in the figure above show the circuit of the basic OTA from Prof. Pretl. This designs is provided in his analog circuit design repository.[Analog-circuit-design Repository](https://github.com/iic-jku/analog-circuit-design)\
+This OTA is a very simple design. Besides the MOSFETs M7 to M13, which are needed for the enable circuit of this OTA design, the core OTA design consist only out of six MOSFETs. This is the bare minmum amount of MOSFETs needed for a functional OTA design.\
+The MOSFET M1 to M6 together form the core OTA circuit. Each MOSFET pair has a particular function in the OTA.
+* The PMOS M3 and M4 form a current Mirror. These two MOSFETs are used as a form of drain resistor for the upcoming differential input pair.
+* The NMOS M1 and M2 form the differential input pair of the OTA. These two MOSFETs form the differential signal, based on the voltage differenz between the input voltages $V_\mathrm{in,n}$ and $V_\mathrm{in,p}$ at the input terminals of the OTA.
+* The two NMOS M6 and M5 create together the bias network for the differential input pair. The bias current is needed to bias the differential input pair M1 and M2 and to create the differential signal. This OTA needs a bias current of $I_\mathrm{bias}=20\,\mathrm{\mu A}$.
 
-This design of an OTA is one of the simplist OTA designs possible. Besides the MOSFETs for the enable circuit of the OTA, this design only contains the bare minimum amount of MOSFETs for an OTA design in order to function.\
-The MOSFETS M1 to M6 together form the OTA circuit. The two PMOS M3 and M4 are in a current Mirro configuration, where the current trough M3 controls the current trough M4. These two PMOS are used as a form of drain resistors for the upcoming differential input pair.\
-The differential input pair is created by the MOSFETs M1 and M2. These two NMOS create the differential signal, based on the voltage differenz between the inputs $V_\mathrm{in,n}$ and $V_\mathrm{in,p}$. The differential signal is created with the current flowing trough the current mirror M6 and M5. The current trough M6 is driving the current trough M5. This current is the biasing current and is $I_\mathrm{bias}=20\,\mathrm{\mu A}$. This current is used to bias the differential input pair M1 and M2. Depending on which input voltage is higher, this NMOS becomes more conductive and therefore a larger current can flow through it. This creates the differential signal. The MOSFET M1 is the postive input terminal, where M2 is the inverting input terminal.
 The MOSFETs M7 to M13 together create the enable circuit. This circuit allows the user to shutoff the OTA, without turning off the voltages $V_\mathrm{dd}$ or $V_\mathrm{ss}$.
 
 
@@ -42,7 +45,7 @@ In order to size each MOSFET properly, the sizing script from Prof. Pretl is use
 | M5 | 8| $5\,\mathrm{\mu m}$| $1.5\,\mathrm{\mu m}$| In order to create a symmetrical OTA, M5 and M6 have to be sized with the same $gm/I_\mathrm{d}$|
 | M6 | 8| $5\,\mathrm{\mu m}$| $10\,\mathrm{\mu m}$| In order to create a symmetrical OTA, M5 and M6 have to be sized with the same $gm/I_\mathrm{d}$|
 
-A smaller length than $L=5\,\mathrm{\mu m}$ is possible due to the 130nm technology, but the design is oriented on the design from Prof. Pretl, in which a length of $L=5\,\mathrm{\mu m}$ is used
+Due to the $130\,\mathrm{nm}$ a smaller length than $L=5\,\mathrm{\mu m}$ would have been possible. However the decision was made to orientate this design at the design from Prof. Pretl. In his OTA designs, a length $L=5\,\mathrm{\mu m}$ is used for all MOSFETs.
 
 
 
@@ -79,7 +82,7 @@ Because there were no changes made to the requierments of the OTA, the sizing of
 
 
 ## linkwitz-riley crossover with an added amplifier at its output
-This Version of the linkwitz-riley-crossover contains the final OTA design.
+This Version of the linkwitz-riley-crossover is based on the final OTA design.
 
 <div align="center">
 
