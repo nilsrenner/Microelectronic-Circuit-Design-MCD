@@ -26,33 +26,29 @@ Schematic of the basic OTA desgin from Prof. Pretl.
 
 The schematic above shows the basic OTA design from Prof. Pretls analog circuit design repository. [Analog-circuit-design Repository](https://github.com/iic-jku/analog-circuit-design)
 
-This is one of the simplist design an OTA can have. Besides the MOSFETs for the OTA there are also multiple MOSFETs (M7 to M13) for an enable circuit. With this enable circuit it is possible to turn on and off the OTA, without shutting down $V_\mathrm{dd}$ or $V_\mathrm{ss}$. The OTA only needs the MOSFETs M1 to M6 in order to function. The PMOS M3 and M4 together are in a current mirror configuration, where the current trough M3 drives also M4. These two PMOS are used as a sort of drain Resistor for the upcoming differential input pair.
-The diffrenital input pair consists of the NMOS M1 and M2. These two MOSFETs create the differential signal, based on the voltage differenz between the inputs $V_\mathrm{in,n}$ and $V_\mathrm{in,p}$. The differential signal is created with the current flowing trough the current mirror M6 and M5. The current trough M6 is driving the current trough M5. This current is the biasing current and is $I_\mathrm{bias}=20\\,\mathrm{\mu A}$. This current is used to bias the differential input pair M1 and M2. Depending on which input voltage is higher, this NMOS becomes more conductive and therefore a larger current can flow through it. This creates the differential signal. The MOSFET M1 is the postive input terminal, where M2 is the inverting input terminal.
+This design of an OTA is one of the simplist OTA designs possible. Besides the MOSFETs for the enable circuit of the OTA, this design only contains the bare minimum amount of MOSFETs for an OTA design in order to function.\
+The MOSFETS M1 to M6 together form the OTA circuit. The two PMOS M3 and M4 are in a current Mirro configuration, where the current trough M3 controls the current trough M4. These two PMOS are used as a form of drain resistors for the upcoming differential input pair.\
+The differential input pair is created by the MOSFETs M1 and M2. These two NMOS create the differential signal, based on the voltage differenz between the inputs $V_\mathrm{in,n}$ and $V_\mathrm{in,p}$. The differential signal is created with the current flowing trough the current mirror M6 and M5. The current trough M6 is driving the current trough M5. This current is the biasing current and is $I_\mathrm{bias}=20\,\mathrm{\mu A}$. This current is used to bias the differential input pair M1 and M2. Depending on which input voltage is higher, this NMOS becomes more conductive and therefore a larger current can flow through it. This creates the differential signal. The MOSFET M1 is the postive input terminal, where M2 is the inverting input terminal.
+The MOSFETs M7 to M13 together create the enable circuit. This circuit allows the user to shutoff the OTA, without turning off the voltages $V_\mathrm{dd}$ or $V_\mathrm{ss}$.
+
 
 In order to size each MOSFET properly, the sizing script from Prof. Pretl is used. The sizing parameters for the enable circuit MOSFETS (M7 to M13) have not been changed.
 | MOSFET  | $gm/I_\mathrm{d}$| Length $L$| Width $W$| Comment   |
 |-------|-----|-------|-------|-------|
-| M1 | 12| $5\\,\mathrm{\mu m}$| $2\\,\mathrm{\mu m}$| In order to create a symmetrical OTA, M1 and M2 have to be sized with the same $gm/I_\mathrm{d}$|
-| M2 | 12| $5\\,\mathrm{\mu m}$| $2\\,\mathrm{\mu m}$| In order to create a symmetrical OTA, M1 and M2 have to be sized with the same $gm/I_\mathrm{d}$|
-| M3 | 8| $5\\,\mathrm{\mu m}$| $3.5\\,\mathrm{\mu m}$| In order to create a symmetrical OTA, M3 and M4 have to be sized with the same $gm/I_\mathrm{d}$|
-| M4 | 8| $5\\,\mathrm{\mu m}$| $3.5\\,\mathrm{\mu m}$| In order to create a symmetrical OTA, M3 and M4 have to be sized with the same $gm/I_\mathrm{d}$|
-| M5 | 8| $5\\,\mathrm{\mu m}$| $1.5\\,\mathrm{\mu m}$| In order to create a symmetrical OTA, M5 and M6 have to be sized with the same $gm/I_\mathrm{d}$|
-| M6 | 8| $5\\,\mathrm{\mu m}$| $10\\,\mathrm{\mu m}$| In order to create a symmetrical OTA, M5 and M6 have to be sized with the same $gm/I_\mathrm{d}$|
+| M1 | 12| $5\,\mathrm{\mu m}$| $2\,\mathrm{\mu m}$| In order to create a symmetrical OTA, M1 and M2 have to be sized with the same $gm/I_\mathrm{d}$|
+| M2 | 12| $5\,\mathrm{\mu m}$| $2\,\mathrm{\mu m}$| In order to create a symmetrical OTA, M1 and M2 have to be sized with the same $gm/I_\mathrm{d}$|
+| M3 | 8| $5\,\mathrm{\mu m}$| $3.5\,\mathrm{\mu m}$| In order to create a symmetrical OTA, M3 and M4 have to be sized with the same $gm/I_\mathrm{d}$|
+| M4 | 8| $5\,\mathrm{\mu m}$| $3.5\,\mathrm{\mu m}$| In order to create a symmetrical OTA, M3 and M4 have to be sized with the same $gm/I_\mathrm{d}$|
+| M5 | 8| $5\,\mathrm{\mu m}$| $1.5\,\mathrm{\mu m}$| In order to create a symmetrical OTA, M5 and M6 have to be sized with the same $gm/I_\mathrm{d}$|
+| M6 | 8| $5\,\mathrm{\mu m}$| $10\,\mathrm{\mu m}$| In order to create a symmetrical OTA, M5 and M6 have to be sized with the same $gm/I_\mathrm{d}$|
 
-A smaller length than $L=5\\,\mathrm{\mu m}$ is possible due to the 130nm technology, but the design is oriented on the design from Prof. Pretl, in which a length of $L=5\\,\mathrm{\mu m}$ is used
+A smaller length than $L=5\,\mathrm{\mu m}$ is possible due to the 130nm technology, but the design is oriented on the design from Prof. Pretl, in which a length of $L=5\,\mathrm{\mu m}$ is used
 
-### AC Analysis
-
-### Transient Analysis
-
-### Loop Gain and Phase Margin
-
-### Testbench for Linkwitz-Riley Crossover
 
 
 ## linkwitz-riley crossover with the modified OTA
 
-### Schematic and sizing of the used OTA
+
 
 
 <div align="center">
@@ -63,31 +59,57 @@ Schematic of the modified OTA. The enable circuit got removed.
 
 </div>
 
+The OTA in the schematic above marks the second OTA design. This OTA design is based on the design of the basic OTA from Prof. Pretl, but has some changes to it. In comparison to the design from Prof. Pretl, the enable circuit got removed. Only the MOSFETs, which are necessesary for OTA to function, are left in this OTA design.
+The objectiv behind this design is to create an OTA, which is easy to overlock and doesn't have any unnecessesary/complicated circuits in it.
+The functionality of each MOSFET is same as before.
 
+Because the design is a simplier version of the basic OTA design from Prof. Pretl, his sizing script can be used again. 
 
+| MOSFET  | $gm/I_\mathrm{d}$| Length $L$| Width $W$| Comment   |
+|-------|-----|-------|-------|-------|
+| M1 | 12| $5\,\mathrm{\mu m}$| $2\,\mathrm{\mu m}$| In order to create a symmetrical OTA, M1 and M2 have to be sized with the same $gm/I_\mathrm{d}$|
+| M2 | 12| $5\,\mathrm{\mu m}$| $2\,\mathrm{\mu m}$| In order to create a symmetrical OTA, M1 and M2 have to be sized with the same $gm/I_\mathrm{d}$|
+| M3 | 8| $5\,\mathrm{\mu m}$| $3.5\,\mathrm{\mu m}$| In order to create a symmetrical OTA, M3 and M4 have to be sized with the same $gm/I_\mathrm{d}$|
+| M4 | 8| $5\,\mathrm{\mu m}$| $3.5\,\mathrm{\mu m}$| In order to create a symmetrical OTA, M3 and M4 have to be sized with the same $gm/I_\mathrm{d}$|
+| M5 | 8| $5\,\mathrm{\mu m}$| $1.5\,\mathrm{\mu m}$| In order to create a symmetrical OTA, M5 and M6 have to be sized with the same $gm/I_\mathrm{d}$|
+| M6 | 8| $5\,\mathrm{\mu m}$| $10\,\mathrm{\mu m}$| In order to create a symmetrical OTA, M5 and M6 have to be sized with the same $gm/I_\mathrm{d}$|
 
+Because there were no changes made to the requierments of the OTA, the sizing of each MOSFET stays the same as before.
 
-
-### AC Analysis
-
-### Transient Analysis
-
-### Loop Gain and Phase Margin
-
-### Testbench for Linkwitz-Riley Crossover
 
 
 ## linkwitz-riley crossover with an added amplifier at its output
+This Version of the linkwitz-riley-crossover contains the final OTA design.
 
-### Schematic and sizing of the used OTA
+<div align="center">
 
-### AC Analysis
+![xxx](./pictures/second_output_stage/second_outpur_stage_ota.png)
 
-### Transient Analysis
+Schematic of the OTA with a second common source amplifier at the output of the differenital input pair.
 
-### Loop Gain and Phase Margin
+</div>
+The figure above shows the final design of the OTA. The desgn is similiar to the OTA design with the enable circuit removed. The core design of the OTA stays the same.
 
-### Testbench for Linkwitz-Riley Crossover
+* M3/M4 are PMOS, which create the upper current mirror.
+* M1/M2 are NMOS and create the differential input pair.
+* M5/M6 are NMOS and create the bias network for the differential inputpair.
 
-
-
+New in comparison to the old design are the MOSFETs M7 and M8 and furthermore the resistor R1 and the capacitor C2.\
+The MOSFETs together create the second output stage. The PMOS M7 is the amplifier and the NMOS M8 is used to bias the amplifier. The amplifier stage needs only half of the bias current as needed for the differential pair. This due to fact, that only one, instead of two, common source amplifier is used in the second stage. That is also the reason for the fact, that only $I_\mathrm{bias,output}=\frac{I_\mathrm{bias,diff}}{2}=10\,\mathrm{\mu A}$ is needed to bias the output amplifier stage. The overall bias current needed for this OTA design therefore increase to $I_\mathrm{bias}=30\,\mathrm{\mu A}$.\
+The reistor $R_\mathrm{1}$ and the capacitor $C_\mathrm{2}$ are there to stabilze the OTA. Because of the multiple stage amplifier design, multiple poles are present. These poles cause ripples in the magnitude response of the OTA and significantly the phase margin of the OTA. In order to improve the magnitude response and the phase margin of the OTA, a feedback capacitor can be added between the output of the differential input pair and the outpur of the second amplifier. This is knwon as miller compensation. The feedback capacitor will create a dominant pole in the lower frequency domain and will push the other poles into the higher frequency domain, out of the operation are of this OTA. This method is called pole splitting and is one of the more common methods, in order to stabilize the OTA. These method has two major side effects:
+* It reduces the bandwith and therefore also the gain-bandwidth-producht (GBW)
+* The feedback capacitor introduces a zero, which provides gain instead of attenuation.
+ 
+This zero will create a spike in the magnitude response of the OTA, which can lead to a potential unstable system again. The zero is located inside the right side of the s-plane. With the help of a resistor in series to the feedback capacitor, the location of the zero can be altered. The zero can be even pushed into the left side of the s-plane. This will dampend the spike and stabilize the OTA again.\
+In order to size the OTA, the sizing script form Prof. Pretl has to be modified. The calculation capability for the output amplifier has to be added. With this calculation added, the OTA can be sized.
+  
+| MOSFET  | $gm/I_\mathrm{d}$| Length $L$| Width $W$| Comment   |
+|-------|-----|-------|-------|-------|
+| M1 | 12| $5\,\mathrm{\mu m}$| $2\,\mathrm{\mu m}$| In order to create a symmetrical OTA, M1 and M2 have to be sized with the same $gm/I_\mathrm{d}$|
+| M2 | 12| $5\,\mathrm{\mu m}$| $2\,\mathrm{\mu m}$| In order to create a symmetrical OTA, M1 and M2 have to be sized with the same $gm/I_\mathrm{d}$|
+| M3 | 8| $5\,\mathrm{\mu m}$| $3.5\,\mathrm{\mu m}$| In order to create a symmetrical OTA, M3 and M4 have to be sized with the same $gm/I_\mathrm{d}$|
+| M4 | 8| $5\,\mathrm{\mu m}$| $3.5\,\mathrm{\mu m}$| In order to create a symmetrical OTA, M3 and M4 have to be sized with the same $gm/I_\mathrm{d}$|
+| M5 | 8| $5\,\mathrm{\mu m}$| $1.5\,\mathrm{\mu m}$| In order to create a symmetrical OTA, M5 and M6 have to be sized with the same $gm/I_\mathrm{d}$|
+| M6 | 8| $5\,\mathrm{\mu m}$| $10\,\mathrm{\mu m}$| In order to create a symmetrical OTA, M5 and M6 have to be sized with the same $gm/I_\mathrm{d}$|
+| M7 | 12| $5\,\mathrm{\mu m}$| $8.5\,\mathrm{\mu m}$| The PMOS of the output amplifier is sized with the $gm/I_\mathrm{d}$, as for the diffrenital input pair M1 and M2.
+| M8 | 8| $5\,\mathrm{\mu m}$| $0.75\,\mathrm{\mu m}$| This MOSFET needs to be half the width of M5, because only half of the bias current is needed to bias the output amplifier M7|

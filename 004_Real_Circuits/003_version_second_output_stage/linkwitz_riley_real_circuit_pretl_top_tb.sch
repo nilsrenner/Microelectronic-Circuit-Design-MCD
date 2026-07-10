@@ -19,7 +19,7 @@ N -280 -100 -280 -80 {lab=0}
 N -280 -180 -280 -160 {lab=V_SS}
 N -90 230 -90 260 {lab=V_SS}
 N 140 110 400 110 {lab=v_out_cross}
-C {isource.sym} -30 -80 0 0 {name=I0 value=120u}
+C {isource.sym} -30 -80 0 0 {name=I0 value=60u}
 C {vsource.sym} -370 -130 0 0 {name=V1 value=1.5 savecurrent=false}
 C {vsource.sym} -290 140 0 0 {name=vin1 value="DC 0.8 AC 1" savecurrent=false }
 C {simulator_commands_shown.sym} -730 -160 0 0 {
@@ -38,7 +38,7 @@ C {simulator_commands_shown.sym} -735 -590 0 0 {name=spice
 only_toplevel=false 
 
 value="
-.include linkwitz_riley_real_circuit_pretl_top_tb.save
+*.include linkwitz_riley_real_circuit_pretl_top_tb.save
 .temp 27
 .ac dec 10 1 100k
 .option sparse

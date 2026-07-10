@@ -19,7 +19,7 @@ N -280 -100 -280 -80 {lab=0}
 N -280 -180 -280 -160 {lab=V_SS}
 N -90 230 -90 260 {lab=V_SS}
 N 140 110 400 110 {lab=v_out_cross}
-C {isource.sym} -30 -80 0 0 {name=I0 value=80u}
+C {isource.sym} -30 -80 0 0 {name=I0 value=120u}
 C {vsource.sym} -370 -130 0 0 {name=V1 value=1.5 savecurrent=false}
 C {vsource.sym} -290 140 0 0 {name=vin1 value="SINE(0 1 150)"}
 C {simulator_commands_shown.sym} -730 -160 0 0 {
@@ -91,5 +91,5 @@ C {devices/launcher.sym} -660 60 0 0 {name=h2
 descr="OP annotate" 
 tclcommand="xschem annotate_op"
 }
-C {/foss/designs/GitHub_Repo/004_Real_Circuits/003_version_second_output_stage/linkwtz_riley_crossover_pretl_OTA.sym} -10 110 0 0 {name=x1}
 C {vsource.sym} -280 -130 0 0 {name=V2 value=0 savecurrent=false}
+C {004_Real_Circuits/003_version_second_output_stage/linkwtz_riley_crossover_pretl_OTA.sym} -10 110 0 0 {name=x1}
