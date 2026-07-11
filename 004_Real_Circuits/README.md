@@ -47,7 +47,49 @@ In order to size each MOSFET properly, the sizing script from Prof. Pretl is use
 
 Due to the $130\,\mathrm{nm}$ a smaller length than $L=5\,\mathrm{\mu m}$ would have been possible. However the decision was made to orientate this design at the design from Prof. Pretl. In his OTA designs, a length $L=5\,\mathrm{\mu m}$ is used for all MOSFETs.
 
+## Analysis of OTA
 
+The designed OTA is analysed in frequency domain, time domain as well as an loopgain analysis. These three analysis are repeated with a temperature sweep.
+
+### Transient analysis
+
+The transient analysis shows, that the OTA needs approxiemtly 1.3 microseconds before entering the work mode. If an input is added before that time, the OTA does not respond as expected. This can be seen in the following figure.
+
+![Response of OTA with input at 200 ns](pictures/second_output_stage/real_circuit_tran_analysis_200n.png)
+
+If the input is added after the 1.3 microseconds the OTA responds as expected as can be seen in the following figure.
+
+![Response of OTA with input at 2000 ns](pictures/second_output_stage/real_circuit_tran_analysis_2000n.png)
+
+The OTA is on the slower side, as the slope in the second picture shows. After v_in is set to 0.8 V the output voltage rises until it hits 0.8 V. There are no oscillations happening.
+
+### Temperature analysis
+
+The analysis where repeated with a temperature sweep. Temperatures from -40 to 140 degrees Celsius where tested. 
+
+#### AC analysis
+
+The AC response shows a sensitivity to temperature. The colder the temperatures get, the higher the frequency cutoff is. The overoscillation of the curve gets smaller as well. 
+
+![AC Response of OTA](pictures/temperature_analysis/real_circuit_ac_analysis_temp.png)
+
+#### Loopgain Analysis
+
+The loopgain analysis shows only a small sensitivity to temperature. Around 1 to 10 MHz some variations can be seen. These do not affect the calculated gain margin and phase margin enough to matter much.
+
+![Phase and Gain Response of OTA](pictures/temperature_analysis/real_circuit_loopgain_analysis_db_temp.png)
+
+#### Transient analysis
+
+The transient analysis shows a sensitivity to temperature that lessens after the OTA enters work mode.
+Then only variatons can be seen at the differenting speed in which the OTA reaches 0 V.
+
+![Response of OTA with input at 2000 ns](pictures/temperature_analysis/real_circuit_tran_analysis_2000n_temp.png)
+
+This is true also for repeating pulses as can be seen in the following figure.
+Here another small difference can be seen, the surges after the input pulse is over are higher the colder the temperatures get.
+
+![Response of OTA with input at 2000 ns](pictures/temperature_analysis/real_circuit_tran_analysis_2000n_temp_two_cycles.png)
 
 ## linkwitz-riley crossover with the modified OTA
 
