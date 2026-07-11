@@ -21,7 +21,7 @@ N -20 -320 -20 -300 {lab=V_DD}
 N -20 -240 -20 -130 {lab=#net1}
 N -80 120 -80 140 {lab=V_SS}
 C {isource.sym} -20 -270 0 0 {name=I0 value=40u}
-C {vsource.sym} -290 30 0 0 {name=vin1 value=AC 1 savecurrent=false ac=1}
+C {vsource.sym} -290 30 0 0 {name=vin1 value="DC 0.8 AC 1"  savecurrent=false ac=1}
 C {gnd.sym} -290 80 0 0 {name=l1 lab=0}
 C {simulator_commands_shown.sym} -870 -220 0 0 {
 name=Libs_Ngspice1
@@ -55,11 +55,11 @@ C {lab_pin.sym} 330 50 2 0 {name=p5 sig_type=std_logic lab=v_out_hp
 }
 C {lab_pin.sym} -260 0 1 0 {name=p2 sig_type=std_logic lab=v_in}
 C {004_Real_Circuits/001_version_basic_ota_pretl/linkwtz_riley_crossover_pretl_OTA.sym} 0 0 0 0 {name=x1}
-C {vsource.sym} -470 -90 0 0 {name=V_DD value=0.75  savecurrent=false}
+C {vsource.sym} -470 -90 0 0 {name=V_DD value=1.5 savecurrent=false}
 C {gnd.sym} -470 -30 0 0 {name=l2 lab=0}
 C {lab_pin.sym} -470 -160 1 0 {name=p1 sig_type=std_logic lab=V_DD}
 C {lab_pin.sym} -20 -370 1 0 {name=p6 sig_type=std_logic lab=V_DD}
-C {vsource.sym} -370 -90 2 0 {name=V_SS value=0.75 savecurrent=false}
+C {vsource.sym} -370 -90 2 0 {name=V_SS value=0 savecurrent=false}
 C {gnd.sym} -370 -30 0 0 {name=l3 lab=0}
 C {lab_pin.sym} -370 -160 1 0 {name=p7 sig_type=std_logic lab=V_SS}
 C {lab_pin.sym} -80 140 3 0 {name=p8 sig_type=std_logic lab=V_SS}
