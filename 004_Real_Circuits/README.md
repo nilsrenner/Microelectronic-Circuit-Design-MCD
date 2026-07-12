@@ -24,9 +24,17 @@ Schematic of the basic OTA desgin from Prof. Pretl.
 
 </div>
 
-The schematic in the figure above show the circuit of the basic OTA from Prof. Pretl. This designs is provided in his analog circuit design repository.[Analog-circuit-design Repository](https://github.com/iic-jku/analog-circuit-design)\
-This OTA is a very simple design. Besides the MOSFETs M7 to M13, which are needed for the enable circuit of this OTA design, the core OTA design consist only out of six MOSFETs. This is the bare minmum amount of MOSFETs needed for a functional OTA design.\
-The MOSFET M1 to M6 together form the core OTA circuit. Each MOSFET pair has a particular function in the OTA.
+The schematic in the figure above show the circuit of the basic OTA from Prof. Pretl. This designs is provided in his analog circuit design repository.[Analog-circuit-design Repository](https://github.com/iic-jku/analog-circuit-design). This OTA is a very simple design. Besides the MOSFETs M7 to M13, which are needed for the enable circuit of this OTA design, the core OTA design consist only out of six MOSFETs.
+
+Parameters:
+* $V_\mathrm{dd}=1.45\,\mathrm{V}<1.5\,\mathrm{V}<1.55\,\mathrm{V}$
+* $V_\mathrm{ss}=0\,\mathrm{V}$
+* $V_\mathrm{in,n/in,p}=0.7\,\mathrm{V}<0.8\,\mathrm{V}<0.9\,\mathrm{V}$
+* $I_\mathrm{bias}=20\,\mathrm{\mu A}$
+
+
+
+Functionality of the MOSFETs:
 * The PMOS M3 and M4 form a current Mirror. These two MOSFETs are used as a form of drain resistor for the upcoming differential input pair.
 * The NMOS M1 and M2 form the differential input pair of the OTA. These two MOSFETs form the differential signal, based on the voltage differenz between the input voltages $V_\mathrm{in,n}$ and $V_\mathrm{in,p}$ at the input terminals of the OTA.
 * The two NMOS M6 and M5 create together the bias network for the differential input pair. The bias current is needed to bias the differential input pair M1 and M2 and to create the differential signal. This OTA needs a bias current of $I_\mathrm{bias}=20\,\mathrm{\mu A}$.
@@ -61,12 +69,13 @@ The circuit with the OTA x1 is the Sallen-Key lowpass circuit. The parameters of
 * $C_\mathrm{LP}=22.221\,\mathrm{nF}$
 
 The OTA x2 is used for the Sallen-key highpass circuit. The following values for the resistors and capacitors are used.
-* $R_\mathrm{HP}=50\,\mathrm{k\Omega}$
-* $C_\mathrm{HP}=22.221\,\mathrm{nF}$
+* $R_\mathrm{HP}=22.221\,\mathrm{k\Omega}$
+* $C_\mathrm{HP}=50\,\mathrm{nF}$
 
-For the inverter circuit and the adder circuit, ideal opamps are used. This is due to the fact, that the input signal at the inputs of the OTA has to be between $0.7\,\mathrm{V}$ and $0.9\,\mathrm{V}$. This cant be achieved with the output signals of the filters. This is also the reason for the voltage source $V_\mathrm{off}$ in the highpass circuit. The two capacitors in series to inverted input of the OTA block all DC voltages. Therefore the incoming AC voltage oscillates around ground potential. The voltage source gives an offset of $0.8\,\mathrm{V}$, so that the signal is inside the wanted voltage range. The resistors used in the inverter and adder circuit have a value of $R_\mathrm{IN}=1\,\mathrm{M\Omega}$.
+For the inverter and adder circuit:
+* $R_\mathrm{IN}=1\,\mathrm{M\Omega}$
 
-
+For the inverter and the adder circuit, ideal opamps are used. This is due to the fact, that they don't have any effect on the performance of the lowpass and highpass. Only these two OTAs are relevant. The reason for the voltage source at the inverting input of x2 is, that the input voltage has to be between $0.7\,\mathrm{V}$ and $0.9\,\mathrm{V}$. This is achieved by DC offset of $0.8\,\mathrm{V}$ with the input signal, but the capcitors $C_\mathrm{3}$ and $C_\mathrm{4}$ block all incoming DC voltages. So the voltage source gives the input signal the necessary offset voltage $0.8\,\mathrm{V}$.
 
 
 <div align="center">
@@ -93,8 +102,16 @@ Schematic of the modified OTA. The enable circuit got removed.
 
 </div>
 
-The OTA design in the schematic above is used in the second LRC design. This OTA design is a modified version of the basic OTA design from Prof. Pretl. The enable circuit is removed for the sake of simplicity.\
-Only the MOSFET which are necessary for the OTA to function properly are left in this design. The functionality of the MOSFETs stays the same.
+The OTA design in the schematic above is used in the second LRC design. This OTA design is a modified version of the basic OTA design from Prof. Pretl. The enable circuit is removed for the sake of simplicity.
+
+Parameters:
+* $V_\mathrm{dd}=1.45\,\mathrm{V}<1.5\,\mathrm{V}<1.55\,\mathrm{V}$
+* $V_\mathrm{ss}=0\,\mathrm{V}$
+* $V_\mathrm{in,n/in,p}=0.7\,\mathrm{V}<0.8\,\mathrm{V}<0.9\,\mathrm{V}$
+* $I_\mathrm{bias}=20\,\mathrm{\mu A}$
+
+
+This design contains only the MOSFET which are necessary for the OTA to function properly. The functionality of the MOSFETs stays the same.
 
 * M3/M4 are PMOS, which create the upper current mirror.
 * M1/M2 are NMOS and create the differential input pair.
@@ -128,11 +145,13 @@ The circuit used for the LRC is the same as before. The OTA x1 is used for the S
 * $C_\mathrm{LP}=22.221\,\mathrm{nF}$
 
 The OTA x2 is used for the Sallen-key highpass circuit. The following values for the resistors and capacitors are used.
-* $R_\mathrm{HP}=50\,\mathrm{k\Omega}$
-* $C_\mathrm{HP}=22.221\,\mathrm{nF}$
+* $R_\mathrm{HP}=22.221\,\mathrm{k\Omega}$
+* $C_\mathrm{HP}=50\,\mathrm{nF}$
 
-Also the inverter circuit and the addition circuit stay the same. The values of the resistors used in this circuit stays at $R_\mathrm{IN}=1\,\mathrm{M\Omega}$.\
-The only difference to the circuit before is, that there is no more enable pin at the OTA symbol. This pin is missing, because there is no more enable circuit inside the OTA.
+For the inverter and adder circuit:
+* $R_\mathrm{IN}=1\,\mathrm{M\Omega}$
+
+Also the inverter circuit and the addition circuit stay the same. Only difference is the removed enable pin for the OTAs.
 
 <div align="center">
 
@@ -141,7 +160,7 @@ The only difference to the circuit before is, that there is no more enable pin a
 Schematic of the Linkwitz-Riley crossover circuit which uses the modified OTA design. 
 
 </div>
-The magnitude response of this LRC is basicly the same as before. This is due to the same core design of OTAs. No improvments are achieved by the new design of the OTA.
+The magnitude response of this LRC is basicly the same as before. This is due to the same core design of OTAs. No improvments are achieved with the new design of the OTA.
 
 ## Linkwitz-Riley crossover with an added amplifier at its output
 This Version of the linkwitz-riley-crossover is based on the final OTA design.
@@ -153,15 +172,27 @@ This Version of the linkwitz-riley-crossover is based on the final OTA design.
 Schematic of the OTA with a second common source amplifier at the output of the differenital input pair.
 
 </div>
-The figure above shows the final design of the OTA. The desgn is similiar to the OTA design with the enable circuit removed. The core design of the OTA stays the same.
+
+Parameters:
+* $V_\mathrm{dd}=1.45\,\mathrm{V}<1.5\,\mathrm{V}<1.55\,\mathrm{V}$
+* $V_\mathrm{ss}=0\,\mathrm{V}$
+* $V_\mathrm{in,n/in,p}=0.7\,\mathrm{V}<0.8\,\mathrm{V}<0.9\,\mathrm{V}$
+* $I_\mathrm{bias}=30\,\mathrm{\mu A}$
+
+
+The figure above shows the final design of the OTA. The desgn is similiar to the OTA design with the enable circuit removed. The core design of the OTA stays the same. New to the design are the MOSFETs M7 and M8 and the resistor $R_\mathrm{1}$ and the capacitor $C_\mathrm{2}$.
 
 * M3/M4 are PMOS, which create the upper current mirror.
 * M1/M2 are NMOS and create the differential input pair.
 * M5/M6 are NMOS and create the bias network for the differential input pair.
+* M7 is a PMOS and is used to amplify the signal coming from the differential input pair.
+* M8 is a NMOS and used to bias the PMOS M7
+* The resistor $R_\mathrm{1}$ and the capacitor $C_\mathrm{2}$ are used for the Miller compensation.
 
-New in comparison to the old design are the MOSFETs M7 and M8 and furthermore the resistor R1 and the capacitor C2.\
-The MOSFETs together create the second output stage. The PMOS M7 is the amplifier and the NMOS M8 is used to bias the amplifier. The amplifier stage needs only half of the bias current as needed for the differential pair. This due to fact, that only one, instead of two, common source amplifier is used in the second stage. That is also the reason for the fact, that only $I_\mathrm{bias,output}=\frac{I_\mathrm{bias,diff}}{2}=10\,\mathrm{\mu A}$ is needed to bias the output amplifier stage. The overall bias current needed for this OTA design therefore increase to $I_\mathrm{bias}=30\,\mathrm{\mu A}$.\
+
+The second amplifier needs only half of the bias current as needed for the differential pair. This due to fact that only one, instead of two, common source amplifier is used in the second stage. Therefore only $I_\mathrm{bias}=10\,\mathrm{\mu A}$ is needed for the second amplifier.\
 The reistor $R_\mathrm{1}$ and the capacitor $C_\mathrm{2}$ are there to stabilze the OTA. Because of the multiple stage amplifier design, multiple poles are present. These poles cause ripples in the magnitude response of the OTA and significantly the phase margin of the OTA. In order to improve the magnitude response and the phase margin of the OTA, a feedback capacitor can be added between the output of the differential input pair and the outpur of the second amplifier. This is knwon as miller compensation. The feedback capacitor will create a dominant pole in the lower frequency domain and will push the other poles into the higher frequency domain, out of the operation are of this OTA. This method is called pole splitting and is one of the more common methods, in order to stabilize the OTA. These method has two major side effects:
+
 * It reduces the bandwith and therefore also the gain-bandwidth-producht (GBW)
 * The feedback capacitor introduces a zero, which provides gain instead of attenuation.
  
@@ -198,8 +229,8 @@ Schematic of Linkwitz-Riley crossover circuit which uses the OTA design with an 
 * $C_\mathrm{LP}=22.221\,\mathrm{nF}$
 
 The OTA x2 is used as a Sallen-key highpass. The following values for the resistors and capacitors are used.
-* $R_\mathrm{HP}=50\,\mathrm{k\Omega}$
-* $C_\mathrm{HP}=22.221\,\mathrm{nF}$
+* $R_\mathrm{HP}=22.221\,\mathrm{k\Omega}$
+* $C_\mathrm{HP}=50\,\mathrm{nF}$
 
 The resistors values used in for the inverter circuit and the adder circuit stays at 
 $R_\mathrm{IN}=1\,\mathrm{M\Omega}$.
@@ -211,6 +242,11 @@ $R_\mathrm{IN}=1\,\mathrm{M\Omega}$.
 
 Magnitude response of the Linkwitz-Riley crossover. 
 </div>
+
+This version of the Linkwitz-Riley crossover finaly has the desired results. The crossover is constant at $0\,\mathrm{dB}$ and the magnitude response of the lowpass and the highpass cross each other by $150\,\mathrm{Hz}$ and at $-6\,\mathrm{dB}$. Also both filters reach the desired $40\,\mathrm{dB}$ attenuation per decade in the transistionband.\
+After $10\,\mathrm{kHz}$ the crossover begins to dip. This might be due to the ripple in the stopband of the lowpass filter. At present, the cause of the ripples remains unknown.
+
+
 ## Analysis of OTA
 
 The designed OTA is analysed in frequency domain, time domain as well as an loopgain analysis. These three analysis are repeated with a temperature sweep.
@@ -220,10 +256,7 @@ The designed OTA is analysed in frequency domain, time domain as well as an loop
 In the table below are the results of the AC analysis testbench for each OTA design used in this repository. With the AC analysis, the frequency behaviour of the OTAs can be tested.
 
 
-| Analysis  | Basic OTA| No enable | Second output stage|
-|-------|-----|-------|-------|
-| DC Gain| 0.977 | 0.977 | 1|
-| Bandwidth | $20.78\,\mathrm{MHz}$ | $20.81\,\mathrm{MHz}$ | $12.52\,\mathrm{MHz}$ |
+
 
 <div align="center">
 
@@ -233,6 +266,17 @@ Plot of the AC Analysis of all OTA variants.
 </div>
 
 
+<div align="center">
+
+| Analysis  | Basic OTA| No enable | Second output stage|
+|-------|-----|-------|-------|
+| DC Gain| 0.977 | 0.977 | 1|
+| Bandwidth | $20.78\,\mathrm{MHz}$ | $20.81\,\mathrm{MHz}$ | $12.52\,\mathrm{MHz}$ |
+
+</div>
+
+The frequency behaviour of the basic OTA and the OTA without the enable circuit is same. This is due to the fact, that the core design of both OTAs is the same. Both OTAs have a bandwith of $BW\approx 20.8\,\mathrm{MHz}$ and a DC gain of $G\approx1$, which is to expected, because in the testbench they are in unity gain configuration.\
+The OTA design with a second output stage has a reduced bandwith of $BW=12.52\,\mathrm{MHz}$, because of the Miller compensation between the outputs of the individuell stages. The DC gain is here also $G=1$.
 ### Loop Gain Analysis
 
 
