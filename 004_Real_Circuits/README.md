@@ -211,8 +211,11 @@ $R_\mathrm{IN}=1\,\mathrm{M\Omega}$.
 
 Magnitude response of the Linkwitz-Riley crossover. 
 </div>
+## Analysis of OTA
 
-## AC Analysis
+The designed OTA is analysed in frequency domain, time domain as well as an loopgain analysis. These three analysis are repeated with a temperature sweep.
+
+### AC Analysis
 
 In the table below are the results of the AC analysis testbench for each OTA design used in this repository. With the AC analysis, the frequency behaviour of the OTAs can be tested.
 
@@ -230,10 +233,37 @@ Plot of the AC Analysis of all OTA variants.
 </div>
 
 
+### Loop Gain Analysis
 
-## Analysis of OTA
 
-The designed OTA is analysed in frequency domain, time domain as well as an loopgain analysis. These three analysis are repeated with a temperature sweep.
+#### DC Gain and Pole-Zero Analysis
+![DC Gain and Pole-Zero Analysis](pictures/DC_gain.png)
+* **DC Gain:** At low frequencies, the magnitude is **71.28 dB**.
+* **Response:** Constant gain up to approx. **200 Hz**, followed by a drop due to the dominant pole at **1118.4 Hz**.
+* **Analysis of the Pole Locations:**
+  * *Dominant Pole:* Intentionally placed very low to roll off the gain early for stability reasons (the gain must cross the 0 dB line before the phase drops too drastically).
+  * *Non-dominant Poles:* For high stability, these should ideally lie far above the unity-gain frequency $f_T$ (rule of thumb: $\ge 2 \cdot f_T$).
+  * *Problem/Observation:* The phase drop from $-90^\circ$ down to $-360^\circ$ indicates that multiple non-dominant poles are located close to one another. Due to this pole clustering, determining the second pole via the $-135^\circ$ phase method only shows that the pole lies above **6.06 MHz**, as the phase shifts can add up prematurely. However, by looking at the slope change in the magnitude response, the second pole can be localized at **16.51 MHz**.
+  * *Critical Evaluation:* With $f_T = 4.415\text{ MHz}$ and $f_{2.\text{Pole}} \approx 16.51\text{ MHz}$, the design rule of thumb ($\ge 2 \cdot f_T$) is safely met. The frequency of the non-dominant pole lies sufficiently far above the unity-gain frequency, which guarantees high noise immunity and stability margins.
+
+#### Stability Analysis
+
+![Stability Analysis](pictures/stability.png)
+
+* Phase and gain margins are metrics used to evaluate the closed-loop stability of amplifiers.
+* **Phase Margin** (refer to the figure with guidelines for reading values):
+  * Describes the distance between the loop phase shift and $-180^\circ$ at the unity-gain frequency (where Gain = 0 dB).
+  * If Gain > 0 dB at $\phi = -180^\circ$, positive feedback occurs, leading to oscillation.
+  * A larger phase margin means higher stability and less overshoot.
+  * An excessively large phase margin results in a sluggish system response.
+  * The desired range is typically **45°–90°** depending on the application, usually around **60°**.
+  * The PM shown here is **57.28°**; it is stable but slightly prone to overshoot.
+* **Gain Margin:**
+  * Shows the clearance between 0 dB and the loop gain at $\phi = -180^\circ$.
+  * The desired gain margin is around **10–15 dB**.
+  * The GM observed here is **7.46 dB**.
+  * Thus, the GM also indicates stable behavior, but lies slightly below our design target.
+
 
 ### Transient analysis
 
@@ -266,6 +296,24 @@ The AC response shows a sensitivity to temperature. The colder the temperatures 
 The loopgain analysis shows only a small sensitivity to temperature. Around 1 to 10 MHz some variations can be seen. These do not affect the calculated gain margin and phase margin enough to matter much.
 
 ![Phase and Gain Response of OTA](pictures/temperature_analysis/real_circuit_loopgain_analysis_db_temp.png)
+
+#### Nils Part
+
+![Loop Gain across Temperatures](pictures/stability_alltemp.png)
+
+* At low frequencies, the curves fan out slightly (**2.5 dB** variation).
+* **Phase:** At higher frequencies around 1 MHz, the phase curves drift further apart.
+* **Worst-Case Considerations:** Since the gain decreases with increasing temperature, the following section analyzes the worst-case response at **140°C**.
+
+### Comparison of Stability Parameters at Room Temperature and 140°C
+
+| Parameter | Room Temperature (27°C) | Worst-Case (140°C) |
+| :--- | :---: | :---: |
+| **DC Gain** | 71.28 dB | 69.49 dB |
+| **Phase Margin (PM)** | 57.28° | 53.80° |
+| **Gain Margin (GM)** | 7.46 dB | 8.69 dB |
+
+![Stability Analysis at 140°C](pictures/stability_140.png)
 
 #### Transient analysis
 
