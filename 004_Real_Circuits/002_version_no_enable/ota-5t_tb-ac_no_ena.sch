@@ -97,6 +97,9 @@ noise v(v_out) Vin dec 101 1k 100MEG
 * write ota-5t_tb-noise.raw all
 print onoise_total
 
+wrdata tb_ac_no_enable.txt v_out frequency
+
+
 .endc
 "}
 C {devices/vsource.sym} 520 -330 0 0 {name=Vdd value=1.5}
