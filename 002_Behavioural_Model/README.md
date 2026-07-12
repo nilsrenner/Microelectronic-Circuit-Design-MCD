@@ -7,34 +7,34 @@ This folder contains a mathematical reprensentation, also behavioral model, of t
 Parameters for the second order LRC: 
 * $f_\mathrm{0}=150\,\mathrm{Hz}$
 * $Q_\mathrm{0}=\frac{1}{2}$
-* Second order butterworth filters implemented via Sallen-Key topology
+* Sallen-Key lowpass and highpass (Second order filters)
 
 
 
 
 ## Linkwitz-riley crossover
 
-The behavioral model of the second order LRC is based on its transfer function. A second order LRC consists of a second order low- and highpass butterworth in parallel, which are both implemented via the Sallen-key topology. This means, that the LRC actually consists out of two seperat transferfunctions, which are combined in the end.
-The second order butterworth lowpass in the LRC can be described with the following transferfunction.
+The behavioral model of the second order LRC is based on its transfer function. A second order LRC consists of a second order low- and highpass in parallel, which are both implemented via the Sallen-key topology. This means, that the LRC actually consists out of two seperat transferfunctions, which are combined in the end.
+The second order lowpass in the LRC can be described with the following transferfunction.
 
 $$
 H(s)= \frac{\omega_\mathrm{0}^2}{s^2 + \frac{\omega_\mathrm{0}^2}{Q_\mathrm{0}} s + \omega_\mathrm{0}^2}
 $$
 
-And the second order butterworth Highpass as following.
+And the second order Highpass as following.
 
 $$
 H(s) = \frac{s^2}{s^2 + \frac{\omega_\mathrm{0}^2}{Q_\mathrm{0}} s + \omega_\mathrm{0}^2}
 $$
 
-Because both filters are Butterworth filters a smooth transitionband can be expected. Because of the Sallen-key topology, both filters are second order Butterworth filters. The second order should result in $40\,\mathrm{dB}$ attenuation per decade for both filters.
+Because both filters are Butterworth like filters a smooth transitionband can be expected. Because of the Sallen-key topology, both filters are second order filters. The second order should result in $40\,\mathrm{dB}$ attenuation per decade for both filters.
 
 
 <div align="center">
 
 ![xxx](./pictures/Butterworth_Sallen_key_implementation.png)
 
-The Magnitude response of both second order Butterworth filters. 
+The Magnitude response of both second order filters. 
 
 </div>
 
