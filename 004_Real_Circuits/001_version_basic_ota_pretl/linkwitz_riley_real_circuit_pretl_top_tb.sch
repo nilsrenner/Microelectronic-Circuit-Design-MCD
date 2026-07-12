@@ -35,7 +35,7 @@ value="
 .lib cornerDIO.lib dio_tt
 "
       }
-C {simulator_commands_shown.sym} -885 -470 0 0 {name=spice
+C {simulator_commands_shown.sym} -885 -500 0 0 {name=spice
 only_toplevel=false 
 value="
 .ac dec 10 1 100k
@@ -45,6 +45,8 @@ value="
 run 
 *plot v_out
 plot db(v_out_lp/v_in) db(v_out_hp/v_in) db(v_out_cross/v_in) 
+
+wrdata real_lrc_basic_ota_analysis.txt db(v_out_lp) db(v_out_cross) db(v_out_hp)
 
 .endc
 "

@@ -63,45 +63,6 @@ C {devices/code_shown.sym} 0 -100 0 0 {name=MODEL only_toplevel=true
 format="tcleval( @value )"
 value=".lib cornerMOSlv.lib mos_tt
 "}
-C {devices/code_shown.sym} -120 -880 0 0 {name=NGSPICE only_toplevel=true 
-value="
-.temp 27
-.control
-option sparse
-save all
-
-* DC-OP, kein raw nötig für spr
-op
-
-* Ab hier: ASCII für AC-Analyse
-set filetype=ascii
-set appendwrite = false    ; optional, aber klarer
-
-* AC-Analyse, direkt in neue Datei schreiben
-ac dec 101 100 100MEG
-write ota-5t_tb-ac.raw all
-
-plot 20*log10(v_out)
-
-meas ac dcgain MAX vmag(v_out) FROM=10 TO=10k
-let f3db = dcgain/sqrt(2)
-meas ac fbw WHEN vmag(v_out)=f3db FALL=1
-let gainerror=(dcgain-1)/1
-print dcgain
-print fbw
-print gainerror
-
-* Noise-Analyse: entweder eigene Datei oder nur Terminal
-noise v(v_out) Vin dec 101 1k 100MEG
-* optional: eigene raw-Datei
-* write ota-5t_tb-noise.raw all
-print onoise_total
-
-wrdata tb_ac_no_enable.txt v_out frequency
-
-
-.endc
-"}
 C {devices/vsource.sym} 520 -330 0 0 {name=Vdd value=1.5}
 C {devices/gnd.sym} 520 -280 0 0 {name=l3 lab=GND}
 C {devices/title.sym} 160 -30 0 0 {name=l5 author="(c) 2024-2025 Harald Pretl, Apache-2.0 license"}
@@ -150,4 +111,34 @@ write_data [save_params] $netlist_dir/[file rootname [file tail [xschem get curr
 # run netlist and simulation
 xschem netlist
 simulate
+"}
+C {devices/code_shown.sym} -20 -800 0 0 {name=NGSPICE1 only_toplevel=true 
+value="
+.temp 27
+.control
+option sparse
+save all
+op
+write ota-5t_tb-ac.raw
+set appendwrite
+
+ac dec 101 100 100MEG
+write ota-5t_tb-ac.raw
+
+wrdata real_circuit_ac_analysis_no_ena.txt db(v_out) 
+
+plot 20*log10(v_out)
+
+meas ac dcgain MAX vmag(v_out) FROM=10 TO=10k
+let f3db = dcgain/sqrt(2)
+meas ac fbw WHEN vmag(v_out)=f3db FALL=1
+let gainerror=(dcgain-1)/1
+print dcgain
+print fbw
+print gainerror
+
+noise v(v_out) Vin dec 101 1k 100MEG
+print onoise_total
+
+.endc
 "}

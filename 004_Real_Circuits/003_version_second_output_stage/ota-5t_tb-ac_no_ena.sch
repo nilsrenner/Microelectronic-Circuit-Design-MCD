@@ -65,7 +65,7 @@ C {devices/code_shown.sym} 0 -100 0 0 {name=MODEL only_toplevel=true
 format="tcleval( @value )"
 value=".lib cornerMOSlv.lib mos_tt
 "}
-C {devices/code_shown.sym} 0 -750 0 0 {name=NGSPICE only_toplevel=true 
+C {devices/code_shown.sym} -170 -770 0 0 {name=NGSPICE only_toplevel=true 
 value="
 .include ota-5t_tb-ac_no_ena.save
 .temp 27
@@ -79,6 +79,7 @@ set appendwrite
 
 ac dec 101 100 100MEG
 write ota-5t_tb-ac.raw
+wrdata real_circuit_ac_analysis_second_output_stage.txt db(v_out) 
 plot 20*log10(v_out)
 
 meas ac dcgain MAX vmag(v_out) FROM=10 TO=10k
