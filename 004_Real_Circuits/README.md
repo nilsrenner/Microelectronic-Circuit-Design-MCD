@@ -247,6 +247,8 @@ If the input is added after the 1.3 microseconds the OTA responds as expected as
 
 The OTA is on the slower side, as the slope in the second picture shows. After v_in is set to 0.8 V the output voltage rises until it hits 0.8 V. There are no oscillations happening.
 
+Using a settling band of 2% the settling time is 0.27 us.
+
 ### Temperature analysis
 
 ![Temperature transient from -40 to 140 degree Celsius](pictures/temperature_analysis/temperature_transient.png)
