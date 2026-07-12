@@ -84,7 +84,10 @@ The OTA is on the slower side, as the slope in the second picture shows. After v
 
 ### Temperature analysis
 
+![Temperatures used in sweep](pictures/temperature_analysis/temperature_sweep.png)
+
 The analysis where repeated with a temperature sweep. Temperatures from -40 to 140 degrees Celsius where tested. 
+
 
 #### AC analysis
 
