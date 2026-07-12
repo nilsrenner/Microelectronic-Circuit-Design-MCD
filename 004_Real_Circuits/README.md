@@ -66,51 +66,7 @@ The OTA x2 is used for the Sallen-key highpass circuit. The following values for
 
 For the inverter circuit and the adder circuit, ideal opamps are used. This is due to the fact, that the input signal at the inputs of the OTA has to be between $0.7\,\mathrm{V}$ and $0.9\,\mathrm{V}$. This cant be achieved with the output signals of the filters. This is also the reason for the voltage source $V_\mathrm{off}$ in the highpass circuit. The two capacitors in series to inverted input of the OTA block all DC voltages. Therefore the incoming AC voltage oscillates around ground potential. The voltage source gives an offset of $0.8\,\mathrm{V}$, so that the signal is inside the wanted voltage range. The resistors used in the inverter and adder circuit have a value of $R_\mathrm{IN}=1\,\mathrm{M\Omega}$.
 
-## Analysis of OTA
 
-The designed OTA is analysed in frequency domain, time domain as well as an loopgain analysis. These three analysis are repeated with a temperature sweep.
-
-### Transient analysis
-
-The transient analysis shows, that the OTA needs approxiemtly 1.3 microseconds before entering the work mode. If an input is added before that time, the OTA does not respond as expected. This can be seen in the following figure.
-
-![Response of OTA with input at 200 ns](pictures/second_output_stage/real_circuit_tran_analysis_200n.png)
-
-If the input is added after the 1.3 microseconds the OTA responds as expected as can be seen in the following figure.
-
-![Response of OTA with input at 2000 ns](pictures/second_output_stage/real_circuit_tran_analysis_2000n.png)
-
-The OTA is on the slower side, as the slope in the second picture shows. After v_in is set to 0.8 V the output voltage rises until it hits 0.8 V. There are no oscillations happening.
-
-### Temperature analysis
-
-![Temperature transient from -40 to 140 degree Celsius](pictures/temperature_analysis/temperature_transient.png)
-
-The analysis where repeated with a temperature sweep. Temperatures from -40° to 140° Celsius where tested. 
-
-#### AC analysis
-
-The AC response shows a sensitivity to temperature. The colder the temperatures get, the higher the frequency cutoff is. The overoscillation of the curve gets smaller as well. 
-
-![AC Response of OTA](pictures/temperature_analysis/real_circuit_ac_analysis_temp.png)
-
-#### Loopgain Analysis
-
-The loopgain analysis shows only a small sensitivity to temperature. Around 1 to 10 MHz some variations can be seen. These do not affect the calculated gain margin and phase margin enough to matter much.
-
-![Phase and Gain Response of OTA](pictures/temperature_analysis/real_circuit_loopgain_analysis_db_temp.png)
-
-#### Transient analysis
-
-The transient analysis shows a sensitivity to temperature that lessens after the OTA enters work mode.
-Then only variatons can be seen at the differenting speed in which the OTA reaches 0 V.
-
-![Response of OTA with input at 2000 ns](pictures/temperature_analysis/real_circuit_tran_analysis_2000n_temp.png)
-
-This is true also for repeating pulses as can be seen in the following figure.
-Here another small difference can be seen, the surges after the input pulse is over are higher the colder the temperatures get.
-
-![Response of OTA with input at 2000 ns](pictures/temperature_analysis/real_circuit_tran_analysis_2000n_temp_two_cycles.png)
 
 
 <div align="center">
@@ -248,9 +204,71 @@ The OTA x2 is used as a Sallen-key highpass. The following values for the resist
 The resistors values used in for the inverter circuit and the adder circuit stays at 
 $R_\mathrm{IN}=1\,\mathrm{M\Omega}$.
 
+
 <div align="center">
 
 ![xxx](./pictures/second_output_stage/lrc_mag_response.png)
 
 Magnitude response of the Linkwitz-Riley crossover. 
 </div>
+
+## AC Analysis
+
+In the table below are the results of the AC analysis testbench for each OTA design used in this repository. With the AC analysis, the frequency behaviour of the OTAs can be tested.
+
+
+| Analysis  | Basic OTA| No enable | Second output stage|
+|-------|-----|-------|-------|
+| DC Gain| 0.977 | 0.977 | 1|
+| Bandwidth | $20.78\,\mathrm{MHz}$ | $20.81\,\mathrm{MHz}$ | $12.52\,\mathrm{MHz}$ |
+
+
+-> Plot aller AC-Analysen
+
+
+
+## Analysis of OTA
+
+The designed OTA is analysed in frequency domain, time domain as well as an loopgain analysis. These three analysis are repeated with a temperature sweep.
+
+### Transient analysis
+
+The transient analysis shows, that the OTA needs approxiemtly 1.3 microseconds before entering the work mode. If an input is added before that time, the OTA does not respond as expected. This can be seen in the following figure.
+
+![Response of OTA with input at 200 ns](pictures/second_output_stage/real_circuit_tran_analysis_200n.png)
+
+If the input is added after the 1.3 microseconds the OTA responds as expected as can be seen in the following figure.
+
+![Response of OTA with input at 2000 ns](pictures/second_output_stage/real_circuit_tran_analysis_2000n.png)
+
+The OTA is on the slower side, as the slope in the second picture shows. After v_in is set to 0.8 V the output voltage rises until it hits 0.8 V. There are no oscillations happening.
+
+### Temperature analysis
+
+![Temperature transient from -40 to 140 degree Celsius](pictures/temperature_analysis/temperature_transient.png)
+
+The analysis where repeated with a temperature sweep. Temperatures from -40 to 140 degrees Celsius where tested. 
+
+#### AC analysis
+
+The AC response shows a sensitivity to temperature. The colder the temperatures get, the higher the frequency cutoff is. The overoscillation of the curve gets smaller as well. 
+
+![AC Response of OTA](pictures/temperature_analysis/real_circuit_ac_analysis_temp.png)
+
+#### Loopgain Analysis
+
+The loopgain analysis shows only a small sensitivity to temperature. Around 1 to 10 MHz some variations can be seen. These do not affect the calculated gain margin and phase margin enough to matter much.
+
+![Phase and Gain Response of OTA](pictures/temperature_analysis/real_circuit_loopgain_analysis_db_temp.png)
+
+#### Transient analysis
+
+The transient analysis shows a sensitivity to temperature that lessens after the OTA enters work mode.
+Then only variatons can be seen at the differenting speed in which the OTA reaches 0 V.
+
+![Response of OTA with input at 2000 ns](pictures/temperature_analysis/real_circuit_tran_analysis_2000n_temp.png)
+
+This is true also for repeating pulses as can be seen in the following figure.
+Here another small difference can be seen, the surges after the input pulse is over are higher the colder the temperatures get.
+
+![Response of OTA with input at 2000 ns](pictures/temperature_analysis/real_circuit_tran_analysis_2000n_temp_two_cycles.png)
