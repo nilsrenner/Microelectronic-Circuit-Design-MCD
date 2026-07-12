@@ -78,6 +78,7 @@ set appendwrite
 
 ac dec 101 100 100MEG
 write ota-5t_tb-ac.raw
+wrdata real_circuit_ac_analysis_basic.txt db(v_out) 
 plot 20*log10(v_out)
 
 meas ac dcgain MAX vmag(v_out) FROM=10 TO=10k

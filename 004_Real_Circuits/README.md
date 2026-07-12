@@ -77,8 +77,8 @@ Magntiude response of the Linkwitz-Riley crossover with the basic OTA from Prof.
 
 </div>
 
-The plot above shows the magnitude response of the Linkwitz-Riley crossover with the basic OTA from Prof. Pretl. The red line shows the second order Butterworth lowpass, the blue line the second order Butterworth highpass and the orange line the sum of both.\
-Clearly visible is that, the cross line is not flat at all. It is not even near the anticipated $0\,\mathrm{dB}$ mark. It dips around the same time, as the lowpass. The reason for this is, that the low- and the highpass dont have enough attenuation in their stopband and doenst reach the $-40\,\mathrm{dB}$ per decade in the transistionband. The lowpass only reaches an attenuation of around $-9\,\mathrm{dB}$ in its stopband, which is not good at all. Even the cross of both magnitude responses are not at the desired frequency and not at $-6\,\mathrm{dB}$. Instead they cross each other by $95\,\mathrm{Hz}$ at around $-7\,\mathrm{dB}$.
+The plot above shows the magnitude response of the Linkwitz-Riley crossover with the basic OTA from Prof. Pretl. The blue line shows the second order Butterworth lowpass, the green line the second order Butterworth highpass and the orange line the sum of both.\
+Clearly visible is that, the cross line is not flat at all. It is not even near the anticipated $0\,\mathrm{dB}$ mark. It dips around the same time, as the lowpass. The reason for this is, that the low- and the highpass dont have enough attenuation in their stopband and doens't reach the $-40\,\mathrm{dB}$ per decade in the transistionband. The lowpass only reaches an attenuation of around $-9\,\mathrm{dB}$ in its stopband, which is not good at all. Even the cross of both magnitude responses are not at the desired frequency and not at $-6\,\mathrm{dB}$. Instead they cross each other by $87\,\mathrm{Hz}$ at around $-6.8\,\mathrm{dB}$.
 
 ## Linkwitz-Riley crossover with the modified basic OTA design
 This LRC uses a modified version of the basic OTA design from Prof. Pretl. 
@@ -222,8 +222,12 @@ In the table below are the results of the AC analysis testbench for each OTA des
 | DC Gain| 0.977 | 0.977 | 1|
 | Bandwidth | $20.78\,\mathrm{MHz}$ | $20.81\,\mathrm{MHz}$ | $12.52\,\mathrm{MHz}$ |
 
+<div align="center">
 
--> Plot aller AC-Analysen
+![xxx](./pictures/AC_Analysis.png)
+
+Plot of the AC Analysis of all OTA variants.
+</div>
 
 
 
