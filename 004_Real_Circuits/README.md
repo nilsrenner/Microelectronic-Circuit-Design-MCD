@@ -245,6 +245,8 @@ The OTA is on the slower side, as the slope in the second picture shows. After v
 
 ### Temperature analysis
 
+![Temperature transient from -40 to 140 degree Celsius](pictures/temperature_analysis/temperature_transient.png)
+
 The analysis where repeated with a temperature sweep. Temperatures from -40 to 140 degrees Celsius where tested. 
 
 #### AC analysis
