@@ -5,203 +5,218 @@ V {}
 S {}
 F {}
 E {}
-N -460 -190 -430 -190 {lab=#net1}
-N -220 -10 0 -10 {lab=VOUT_LP}
-N -340 -190 -340 -160 {lab=#net2}
-N -370 -190 -340 -190 {lab=#net2}
-N -340 -100 -340 -60 {lab=0}
-N -460 -270 -460 -190 {lab=#net1}
-N -480 -190 -460 -190 {lab=#net1}
-N -460 -270 -180 -270 {lab=#net1}
-N -120 -270 0 -270 {lab=VOUT_LP}
-N 0 70 20 70 {lab=VOUT_HP}
-N -220 350 0 350 {lab=VOUT_HP}
-N -600 -20 -540 -20 {lab=VIN}
-N -540 -190 -540 -20 {lab=VIN}
-N 0 70 -0 220 {lab=VOUT_HP}
-N -120 70 0 70 {lab=VOUT_HP}
-N 0 220 0 350 {lab=VOUT_HP}
-N 0 -270 0 -130 {lab=VOUT_LP}
-N -20 -130 0 -130 {lab=VOUT_LP}
-N 0 -130 -0 -10 {lab=VOUT_LP}
-N 0 -270 20 -270 {lab=VOUT_LP}
-N -340 -190 -220 -190 {lab=#net2}
-N -540 -20 -540 160 {lab=VIN}
-N -460 160 -430 160 {lab=#net3}
-N -340 160 -220 160 {lab=#net4}
-N -340 320 -340 360 {lab=0}
-N -460 70 -460 160 {lab=#net3}
-N -480 160 -460 160 {lab=#net3}
-N -460 70 -180 70 {lab=#net3}
-N -120 -50 -120 10 {lab=V_SS}
-N -220 -190 -220 -160 {lab=#net2}
-N -220 -160 -200 -160 {lab=#net2}
-N -220 -100 -220 -10 {lab=VOUT_LP}
-N -220 -100 -200 -100 {lab=VOUT_LP}
-N -80 -240 -80 -210 {lab=I_BIAS}
-N -220 190 -210 190 {lab=#net4}
-N -220 160 -220 190 {lab=#net4}
-N -220 250 -220 350 {lab=VOUT_HP}
-N -220 250 -210 250 {lab=VOUT_HP}
-N -90 120 -90 140 {lab=I_BIAS}
-N -130 120 -130 140 {lab=V_DD}
-N -30 220 -0 220 {lab=VOUT_HP}
-N -120 -240 -120 -210 {lab=V_DD}
-N -80 -50 -80 -20 {lab=V_DD}
-N -90 300 -90 330 {lab=V_DD}
-N 0 220 150 220 {lab=VOUT_HP}
-N 0 -130 520 -130 {lab=VOUT_LP}
-N 210 220 240 220 {lab=#net5}
-N 240 190 240 220 {lab=#net5}
-N 240 90 290 90 {lab=#net5}
-N 350 90 500 90 {lab=#net6}
-N 500 -20 500 90 {lab=#net6}
-N 500 -20 510 -20 {lab=#net6}
-N 620 -130 670 -130 {lab=#net7}
-N 620 -130 620 -20 {lab=#net7}
-N 580 -130 620 -130 {lab=#net7}
-N 570 -20 620 -20 {lab=#net7}
-N 270 -420 270 -410 {lab=V_DD}
-N 350 -420 350 -410 {lab=I_BIAS}
-N 500 90 520 90 {lab=#net6}
-N 520 90 520 220 {lab=#net6}
-N 490 220 520 220 {lab=#net6}
-N 730 -130 890 -130 {lab=VOUT_CROSS}
-N 890 -130 890 10 {lab=VOUT_CROSS}
-N 860 10 890 10 {lab=VOUT_CROSS}
-N 890 10 930 10 {lab=VOUT_CROSS}
-N 410 -420 410 -410 {lab=V_SS}
-N -130 300 -130 370 {lab=V_SS}
-N 40 280 40 370 {lab=V_SS}
-N -130 370 40 370 {lab=V_SS}
-N 520 280 520 340 {lab=V_SS}
-N 910 70 910 140 {lab=V_SS}
-N -120 10 40 10 {lab=V_SS}
-N 40 -70 40 10 {lab=V_SS}
-N -340 240 -340 260 {lab=#net8}
-N -340 160 -340 180 {lab=#net4}
-N -370 160 -340 160 {lab=#net4}
-N 240 190 310 190 {lab=#net5}
-N 240 90 240 190 {lab=#net5}
-N 280 250 310 250 {lab=0}
-N 650 40 680 40 {lab=0}
-N 620 -20 680 -20 {lab=#net7}
-C {res.sym} -510 -190 1 0 {name=R1
+N -610 -170 -580 -170 {lab=#net1}
+N -370 10 -150 10 {lab=VOUT_LP}
+N -490 -170 -490 -140 {lab=#net2}
+N -520 -170 -490 -170 {lab=#net2}
+N -490 -80 -490 -40 {lab=0}
+N -610 -250 -610 -170 {lab=#net1}
+N -630 -170 -610 -170 {lab=#net1}
+N -610 -250 -330 -250 {lab=#net1}
+N -270 -250 -150 -250 {lab=VOUT_LP}
+N -370 370 -150 370 {lab=VOUT_HP}
+N -750 0 -690 0 {lab=VIN}
+N -690 -170 -690 0 {lab=VIN}
+N -150 90 -150 240 {lab=VOUT_HP}
+N -270 90 -150 90 {lab=VOUT_HP}
+N -150 240 -150 370 {lab=VOUT_HP}
+N -150 -250 -150 -110 {lab=VOUT_LP}
+N -170 -110 -150 -110 {lab=VOUT_LP}
+N -150 -110 -150 10 {lab=VOUT_LP}
+N -490 -170 -370 -170 {lab=#net2}
+N -690 0 -690 180 {lab=VIN}
+N -610 180 -580 180 {lab=#net3}
+N -490 180 -370 180 {lab=#net4}
+N -610 90 -610 180 {lab=#net3}
+N -630 180 -610 180 {lab=#net3}
+N -610 90 -330 90 {lab=#net3}
+N -370 -170 -370 -140 {lab=#net2}
+N -370 -140 -350 -140 {lab=#net2}
+N -370 -80 -370 10 {lab=VOUT_LP}
+N -370 -80 -350 -80 {lab=VOUT_LP}
+N -370 210 -360 210 {lab=#net4}
+N -370 180 -370 210 {lab=#net4}
+N -370 270 -370 370 {lab=VOUT_HP}
+N -370 270 -360 270 {lab=VOUT_HP}
+N -240 140 -240 160 {lab=I_BIAS}
+N -180 240 -150 240 {lab=VOUT_HP}
+N -120 -110 560 -110 {lab=VOUT_LP}
+N -110 240 120 240 {lab=VOUT_HP}
+N 180 60 290 60 {lab=#net5}
+N 350 60 450 60 {lab=v_out_hp}
+N 450 210 560 210 {lab=v_out_hp}
+N 450 60 450 210 {lab=v_out_hp}
+N 410 210 450 210 {lab=v_out_hp}
+N 560 -50 560 210 {lab=v_out_hp}
+N 620 -290 770 -290 {lab=v_out_lp}
+N 830 -290 970 -290 {lab=VOUT_CROSS}
+N 970 -290 970 -140 {lab=VOUT_CROSS}
+N 970 -140 1040 -140 {lab=VOUT_CROSS}
+N 890 -140 970 -140 {lab=VOUT_CROSS}
+N -270 -220 -270 -190 {lab=V_DD}
+N -230 -220 -230 -190 {lab=I_BIAS}
+N -120 -420 -120 -410 {lab=V_DD}
+N -40 -420 -40 -410 {lab=I_BIAS}
+N -80 -420 -80 -410 {lab=V_SS}
+N -280 320 -280 340 {lab=V_SS}
+N -270 -30 -270 -10 {lab=V_SS}
+N -270 -10 -120 -10 {lab=V_SS}
+N 970 -140 970 -130 {lab=VOUT_CROSS}
+N 820 -30 970 -30 {lab=V_SS}
+N 970 -70 970 -30 {lab=V_SS}
+N 450 210 450 220 {lab=v_out_hp}
+N 450 280 450 310 {lab=V_SS}
+N -280 340 -110 340 {lab=V_SS}
+N -110 310 -110 340 {lab=V_SS}
+N -110 240 -110 250 {lab=VOUT_HP}
+N -150 240 -110 240 {lab=VOUT_HP}
+N -120 -110 -120 -100 {lab=VOUT_LP}
+N -150 -110 -120 -110 {lab=VOUT_LP}
+N -120 -40 -120 -10 {lab=V_SS}
+N -280 140 -280 160 {lab=V_DD}
+N -490 260 -490 280 {lab=#net6}
+N -490 180 -490 200 {lab=#net4}
+N -520 180 -490 180 {lab=#net4}
+N -490 340 -490 370 {lab=0}
+N 180 230 180 240 {lab=#net5}
+N 320 180 410 180 {lab=v_out_hp}
+N 410 180 410 210 {lab=v_out_hp}
+N 320 240 320 280 {lab=V_SS}
+N 320 280 450 280 {lab=V_SS}
+N 820 -170 890 -170 {lab=VOUT_CROSS}
+N 890 -170 890 -140 {lab=VOUT_CROSS}
+N 820 -90 820 -30 {lab=V_SS}
+N 790 -30 820 -30 {lab=V_SS}
+N 180 60 180 230 {lab=#net5}
+N 620 -120 620 -50 {lab=v_out_lp}
+N 620 -120 780 -120 {lab=v_out_lp}
+N 620 -290 620 -120 {lab=v_out_lp}
+N 720 -160 780 -160 {lab=V_SS}
+N 720 -90 820 -90 {lab=V_SS}
+N 820 -110 820 -90 {lab=V_SS}
+N 720 -160 720 -90 {lab=V_SS}
+N 180 230 280 230 {lab=#net5}
+N 250 190 280 190 {lab=V_SS}
+N 250 190 250 280 {lab=V_SS}
+N 250 280 320 280 {lab=V_SS}
+N -240 320 -240 360 {lab=V_DD}
+N -230 -30 -230 20 {lab=V_DD}
+C {res.sym} -660 -170 1 0 {name=R1
 value=R_LP
 footprint=1206
 device=resistor
 m=1}
-C {res.sym} -400 -190 1 0 {name=R2
+C {param.sym} -160 -530 0 0 {name=s5 value="R_IN=1meg"}
+C {res.sym} -550 -170 1 0 {name=R2
 value=R_LP
 footprint=1206
 device=resistor
 m=1}
-C {capa.sym} -340 -130 0 0 {name=C1
+C {capa.sym} -490 -110 0 0 {name=C1
 m=1
 value=C_LP
 footprint=1206
 device="ceramic capacitor"}
-C {gnd.sym} -340 -60 0 0 {name=l1 lab=0}
-C {capa.sym} -150 -270 3 0 {name=C2
+C {gnd.sym} -490 -40 0 0 {name=l1 lab=0}
+C {capa.sym} -300 -250 3 0 {name=C2
 m=1
 value=C_LP
 footprint=1206
 device="ceramic capacitor"}
-C {capa.sym} -510 160 3 0 {name=C3
+C {capa.sym} -660 180 3 0 {name=C3
 m=1
 value=C_HP
 footprint=1206
 device="ceramic capacitor"}
-C {capa.sym} -400 160 3 0 {name=C4
+C {capa.sym} -550 180 3 0 {name=C4
 m=1
 value=C_HP
 footprint=1206
 device="ceramic capacitor"}
-C {res.sym} -150 70 3 0 {name=R3
+C {res.sym} -300 90 3 0 {name=R3
 value=R_HP
 footprint=1206
 device=resistor
 m=1}
-C {res.sym} -340 290 0 0 {name=R4
+C {res.sym} -490 310 0 0 {name=R4
 value=R_HP
 footprint=1206
 device=resistor
 m=1}
-C {gnd.sym} -340 360 0 0 {name=l2 lab=0}
-C {opin.sym} 20 -270 0 0 {name=p2 lab=VOUT_LP}
-C {opin.sym} 20 70 0 0 {name=p3 lab=VOUT_HP}
-C {ipin.sym} -600 -20 0 0 {name=p1 lab=VIN}
-C {res.sym} 320 90 3 0 {name=R10
+C {gnd.sym} -490 370 0 0 {name=l2 lab=0}
+C {opin.sym} -150 -250 0 0 {name=p2 lab=VOUT_LP}
+C {ipin.sym} -750 0 0 0 {name=p1 lab=VIN}
+C {iopin.sym} -120 -420 3 0 {name=p14 lab=V_DD}
+C {opin.sym} -150 90 0 0 {name=p3 lab=VOUT_HP}
+C {iopin.sym} -80 -420 3 0 {name=p4 lab=V_SS}
+C {lab_pin.sym} -270 -220 0 0 {name=p9 sig_type=std_logic lab=V_DD}
+C {lab_pin.sym} -230 -220 2 0 {name=p11 sig_type=std_logic lab=I_BIAS}
+C {lab_pin.sym} -270 -10 0 0 {name=p15 sig_type=std_logic lab=V_SS}
+C {res.sym} 150 240 3 0 {name=R5
 value=R_IN
 footprint=1206
 device=resistor
 m=1}
-C {res.sym} 180 220 3 0 {name=R11
+C {res.sym} 320 60 3 0 {name=R6
 value=R_IN
 footprint=1206
 device=resistor
 m=1}
-C {gnd.sym} 280 250 0 0 {name=l6 lab=0}
-C {res.sym} 700 -130 3 0 {name=R12
+C {iopin.sym} -40 -420 3 0 {name=p6 lab=I_BIAS}
+C {res.sym} 590 -110 3 0 {name=R14
 value=R_IN
 footprint=1206
 device=resistor
 m=1}
-C {res.sym} 540 -20 3 0 {name=R13
+C {res.sym} 590 -50 3 0 {name=R7
 value=R_IN
 footprint=1206
 device=resistor
 m=1}
-C {gnd.sym} 650 40 0 0 {name=l9 lab=0}
-C {res.sym} 550 -130 3 0 {name=R14
+C {res.sym} 800 -290 3 0 {name=R8
 value=R_IN
 footprint=1206
 device=resistor
 m=1}
-C {opin.sym} 930 10 0 0 {name=p9 lab=VOUT_CROSS}
-C {004_Real_Circuits/001_version_basic_ota_pretl/ota-5t.sym} -120 -130 0 0 {name=x1}
-C {004_Real_Circuits/001_version_basic_ota_pretl/ota-5t.sym} -130 220 0 0 {name=x2}
-C {iopin.sym} 270 -420 3 0 {name=p4 lab=V_DD}
-C {iopin.sym} 350 -420 3 0 {name=p7 lab=I_BIAS}
-C {lab_pin.sym} 270 -410 3 0 {name=p20 sig_type=std_logic lab=V_DD}
-C {lab_pin.sym} 350 -410 3 0 {name=p21 sig_type=std_logic lab=I_BIAS}
-C {lab_pin.sym} -120 -240 0 0 {name=p5 sig_type=std_logic lab=V_DD}
-C {lab_pin.sym} -130 120 0 0 {name=p6 sig_type=std_logic lab=V_DD}
-C {lab_pin.sym} -90 330 2 0 {name=p8 sig_type=std_logic lab=V_DD}
-C {lab_pin.sym} -80 -20 2 0 {name=p10 sig_type=std_logic lab=V_DD}
-C {lab_pin.sym} -80 -240 2 0 {name=p11 sig_type=std_logic lab=I_BIAS}
-C {lab_pin.sym} -90 120 2 0 {name=p12 sig_type=std_logic lab=I_BIAS}
-C {iopin.sym} 410 -420 3 0 {name=p19 lab=V_SS}
-C {lab_pin.sym} 410 -410 3 0 {name=p22 sig_type=std_logic lab=V_SS}
-C {lab_pin.sym} -120 -30 0 0 {name=p23 sig_type=std_logic lab=V_SS}
-C {lab_pin.sym} -130 330 0 0 {name=p24 sig_type=std_logic lab=V_SS}
-C {lab_pin.sym} 520 340 0 0 {name=p25 sig_type=std_logic lab=V_SS}
-C {lab_pin.sym} 910 140 0 0 {name=p26 sig_type=std_logic lab=V_SS}
-C {capa.sym} 40 250 0 0 {name=C8
+C {opin.sym} 1040 -140 0 0 {name=p5 lab=VOUT_CROSS}
+C {lab_pin.sym} -280 140 0 0 {name=p10 sig_type=std_logic lab=V_DD}
+C {lab_pin.sym} -240 140 2 0 {name=p12 sig_type=std_logic lab=I_BIAS}
+C {lab_pin.sym} -280 340 0 0 {name=p13 sig_type=std_logic lab=V_SS}
+C {lab_pin.sym} 450 310 0 0 {name=p18 sig_type=std_logic lab=V_SS}
+C {lab_pin.sym} 790 -30 0 0 {name=p19 sig_type=std_logic lab=V_SS}
+C {lab_pin.sym} -120 -410 3 0 {name=p20 sig_type=std_logic lab=V_DD}
+C {lab_pin.sym} -40 -410 3 0 {name=p21 sig_type=std_logic lab=I_BIAS}
+C {lab_pin.sym} -80 -410 3 0 {name=p22 sig_type=std_logic lab=V_SS}
+C {param.sym} -680 -530 0 0 {name=s1 value="C_LP=21.221e-9"}
+C {param.sym} -680 -500 0 0 {name=s2 value="R_LP=50k"}
+C {param.sym} -420 -530 0 0 {name=s3 value="C_HP=50e-9"}
+C {param.sym} -420 -500 0 0 {name=s4 value="R_HP=21.221k"}
+C {capa.sym} -120 -70 0 0 {name=C5
 m=1
 value=50f
 footprint=1206
 device="ceramic capacitor"}
-C {capa.sym} 520 250 0 0 {name=C5
+C {capa.sym} 970 -100 0 0 {name=C6
 m=1
 value=50f
 footprint=1206
 device="ceramic capacitor"}
-C {capa.sym} 40 -100 0 0 {name=C6
+C {capa.sym} 450 250 0 0 {name=C7
 m=1
 value=50f
 footprint=1206
 device="ceramic capacitor"}
-C {capa.sym} 910 40 0 0 {name=C7
+C {capa.sym} -110 280 0 0 {name=C8
 m=1
 value=50f
 footprint=1206
 device="ceramic capacitor"}
-C {param.sym} 60 -550 0 0 {name=s5 value="R_IN=1meg"}
-C {param.sym} -460 -550 0 0 {name=s1 value="C_LP=21.221e-9"}
-C {param.sym} -460 -520 0 0 {name=s2 value="R_LP=50k"}
-C {param.sym} -200 -550 0 0 {name=s3 value="C_HP=50e-9"}
-C {param.sym} -200 -520 0 0 {name=s4 value="R_HP=21.221k"}
-C {vsource.sym} -340 210 0 0 {name=voff value="DC 0.8" savecurrent=false }
-C {001_provided_files/2_Idealized_circuits/opamp1.sym} 390 220 0 0 {name=x5}
-C {001_provided_files/2_Idealized_circuits/opamp1.sym} 760 10 0 0 {name=x3}
+C {vsource.sym} -490 230 0 0 {name=voff value="DC 0.8" savecurrent=false }
+C {lab_pin.sym} 690 -120 1 0 {name=p23 sig_type=std_logic lab=v_out_lp}
+C {lab_pin.sym} 510 210 1 0 {name=p24 sig_type=std_logic lab=v_out_hp}
+C {vcvs.sym} 320 210 0 0 {name=E1 value=1e6}
+C {vcvs.sym} 820 -140 0 0 {name=E2 value=1e6}
+C {004_Real_Circuits/001_version_basic_ota_pretl/ota-5t.sym} -270 -110 0 0 {name=x1}
+C {004_Real_Circuits/001_version_basic_ota_pretl/ota-5t.sym} -280 240 0 0 {name=x2}
+C {lab_pin.sym} -240 360 0 0 {name=p7 sig_type=std_logic lab=V_DD}
+C {lab_pin.sym} -230 20 0 0 {name=p8 sig_type=std_logic lab=V_DD}
