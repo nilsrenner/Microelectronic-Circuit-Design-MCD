@@ -75,7 +75,7 @@ The OTA x2 is used for the Sallen-key highpass circuit. The following values for
 For the inverter and adder circuit:
 * $R_\mathrm{IN}=1\,\mathrm{M\Omega}$
 
-For the inverter and the adder circuit, ideal opamps are used. This is due to the fact, that they don't have any effect on the performance of the lowpass and highpass. Only these two OTAs are relevant. The reason for the voltage source at the inverting input of x2 is, that the input voltage has to be between $0.7\,\mathrm{V}$ and $0.9\,\mathrm{V}$. This is achieved by DC offset of $0.8\,\mathrm{V}$ with the input signal, but the capcitors $C_\mathrm{3}$ and $C_\mathrm{4}$ block all incoming DC voltages. So the voltage source gives the input signal the necessary offset voltage $0.8\,\mathrm{V}$.
+For the inverter and the adder circuit, voltage controles voltage sources are used. This is due to the fact, that they don't have any effect on the performance of the lowpass and highpass. Only these two OTAs are relevant. The reason for the voltage source at the inverting input of x2 is, that the input voltage has to be between $0.7\,\mathrm{V}$ and $0.9\,\mathrm{V}$. This is achieved by DC offset of $0.8\,\mathrm{V}$ with the input signal, but the capcitors $C_\mathrm{3}$ and $C_\mathrm{4}$ block all incoming DC voltages. So the voltage source gives the input signal the necessary offset voltage $0.8\,\mathrm{V}$.
 
 
 <div align="center">
@@ -244,7 +244,8 @@ Magnitude response of the Linkwitz-Riley crossover.
 </div>
 
 This version of the Linkwitz-Riley crossover finaly has the desired results. The crossover is constant at $0\,\mathrm{dB}$ and the magnitude response of the lowpass and the highpass cross each other by $150\,\mathrm{Hz}$ and at $-6\,\mathrm{dB}$. Also both filters reach the desired $40\,\mathrm{dB}$ attenuation per decade in the transistionband.\
-After $10\,\mathrm{kHz}$ the crossover begins to dip. This might be due to the ripple in the stopband of the lowpass filter. At present, the cause of the ripples remains unknown.
+The reason for the ripples in the stopband of the lowpass have yet to be determained.
+
 
 
 ## Analysis of OTA

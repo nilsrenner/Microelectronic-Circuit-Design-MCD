@@ -46,7 +46,7 @@ run
 *plot v_out
 plot db(v_out_lp/v_in) db(v_out_hp/v_in) db(v_out_cross/v_in) 
 
-wrdata real_lrc_basic_ota_analysis.txt db(v_out_lp) db(v_out_cross) db(v_out_hp)
+wrdata lrc_data_basic.txt db(v_out_lp) db(v_out_cross) db(v_out_hp)
 
 .endc
 "

@@ -66,7 +66,7 @@ set appendwrite
 
 
 run 
-wrdata real_lrc_no_ena_ota_analysis.txt db(v_out_lp) db(v_out_cross) db(v_out_hp)
+wrdata lrc_data_no_enable.txt db(v_out_lp) db(v_out_cross) db(v_out_hp)
 plot db(v_out_lp) db(v_out_hp) db(v_out_cross) 
 
 .endc
