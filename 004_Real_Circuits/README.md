@@ -321,6 +321,9 @@ If the input is added after the 1.3 microseconds the OTA responds as expected as
 
 The OTA is on the slower side, as the slope in the second picture shows. After v_in is set to 0.8 V the output voltage rises until it hits 0.8 V. There are no oscillations happening.
 
+![Response of OTA with input at 2000 ns and settling time](pictures/second_output_stage/real_circuit_tran_analysis_2000n_w_settling_time.png)
+
+
 Using a settling band of 2% the settling time is 0.27 us.
 
 ### Temperature analysis
@@ -329,19 +332,14 @@ Using a settling band of 2% the settling time is 0.27 us.
 
 The analysis where repeated with a temperature sweep. Temperatures from -40 to 140 degrees Celsius where tested. 
 
-#### AC analysis
+#### AC Analysis
 
 The AC response shows a sensitivity to temperature. The colder the temperatures get, the higher the frequency cutoff is. The overoscillation of the curve gets smaller as well. 
 
 ![AC Response of OTA](pictures/temperature_analysis/real_circuit_ac_analysis_temp.png)
 
+
 #### Loopgain Analysis
-
-The loopgain analysis shows only a small sensitivity to temperature. Around 1 to 10 MHz some variations can be seen. These do not affect the calculated gain margin and phase margin enough to matter much.
-
-![Phase and Gain Response of OTA](pictures/temperature_analysis/real_circuit_loopgain_analysis_db_temp.png)
-
-#### Nils Part
 
 ![Loop Gain across Temperatures](pictures/stability_alltemp.png)
 
@@ -349,7 +347,7 @@ The loopgain analysis shows only a small sensitivity to temperature. Around 1 to
 * **Phase:** At higher frequencies around 1 MHz, the phase curves drift further apart.
 * **Worst-Case Considerations:** Since the gain decreases with increasing temperature, the following section analyzes the worst-case response at **140°C**.
 
-### Comparison of Stability Parameters at Room Temperature and 140°C
+##### Comparison of Stability Parameters at Room Temperature and 140°C
 
 | Parameter | Room Temperature (27°C) | Worst-Case (140°C) |
 | :--- | :---: | :---: |
