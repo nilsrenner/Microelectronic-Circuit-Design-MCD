@@ -295,13 +295,13 @@ The OTA design with a second output stage has a reduced bandwith of $BW=12.52\,\
 ![Stability Analysis](pictures/stability.png)
 
 * Phase and gain margins are metrics used to evaluate the closed-loop stability of amplifiers.
-* **Phase Margin** (refer to the figure with guidelines for reading values):
+* **Phase Margin**:
   * Describes the distance between the loop phase shift and $-180^\circ$ at the unity-gain frequency (where Gain = 0 dB).
   * If Gain > 0 dB at $\phi = -180^\circ$, positive feedback occurs, leading to oscillation.
   * A larger phase margin means higher stability and less overshoot.
   * An excessively large phase margin results in a sluggish system response.
   * The desired range is typically **45°–90°** depending on the application, usually around **60°**.
-  * The PM shown here is **57.28°**; it is stable but slightly prone to overshoot.
+  * The PM shown here is **57.28°**, a indication of a stable system.
 * **Gain Margin:**
   * Shows the clearance between 0 dB and the loop gain at $\phi = -180^\circ$.
   * The desired gain margin is around **10–15 dB**.
