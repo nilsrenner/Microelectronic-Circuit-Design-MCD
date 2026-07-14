@@ -15,7 +15,7 @@ The resulting schematic is shown in the next picture. As can be seen, the lowpas
 | :--- | :---: | :---: |
 | **Highpass** | 22.221k | 50n |
 | **Lowpass** | 50k | 22.221n |
-| **Inverter/Adder** | 7.46M | - |
+| **Inverter/Adder** | 1M | - |
 
 ## Resulting waveforms
 
