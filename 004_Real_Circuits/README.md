@@ -342,7 +342,7 @@ The AC response shows a sensitivity to temperature. The colder the temperatures 
 
 #### Loopgain Analysis
 
-![Loop Gain across Temperatures](pictures/stability_alltemp.png)
+![Loop Gain across Temperatures](pictures/temperature_analysis/real_circuit_loopgain_analysis_db_temp.png)
 
 * At low frequencies, the curves fan out slightly (**2.5 dB** variation).
 * **Phase:** At higher frequencies around 1 MHz, the phase curves drift further apart.
