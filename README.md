@@ -1,7 +1,7 @@
 # MICROELECTRONIC CIRCUIT DESIGN
 
 ## Overview
-This project focuses on the fundamental principles of Integrated Circuit (IC) design, demonstrated through the development of a 2nd order Linkwitz-Riley crossover.
+This project focuses on the fundamental principles of Integrated Circuit (IC) design, demonstrated through the design of a 2nd order Linkwitz-Riley crossover.
 
 
 ---
